@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <title>Sergio Meneguzzo</title>
+  </head>
+  <body>
+    <!-- OVERLAY -->
+    <div class="overlay first"></div>
+    <div class="overlay second"></div>
+    <div class="overlay third"></div>
+
+    <!--===== HOME =====-->
+
+     <!--===== SCROLL TOP =====-->
+     <a href="" class="scrolltop" id="scroll-top">
+        <ion-icon name="chevron-up-outline" class="scrolltop__icon"></ion-icon>
+     </a>
+
+    <!-- HEADER -->
+    <header class="l-header">
+      <nav class="nav bd-grid">
+        <div>
+          <a href="#" class="nav__logo">PORTFOLIO</a>
+        </div>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="#skills" class="nav__link">Skills</a>
+            </li>
+            <li class="nav__item">
+              <a href="#work" class="nav__link">Work</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <ion-icon name="menu"></ion-icon>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="l-main bd-grid">
+      <div class="home">
+        <div class="home__information">
+          <span class="home__present anime-text">Hello, I'm </span>
+          <h1 class="home__title anime-text">Sergio Meneguzzo</h1>
+          <span class="home__skill anime-text">Web Developer</span>
+
+          <div>
+            <a href="#" class="home__button anime-text">DOWNLOAD CV</a>
+          </div>
+        </div>
+
+        <div class="home__img">
+          <img src="assets/img/perfil.jpg" alt="" />
+        </div>
+
+        <div class="home__social">
+          <ion-icon name="logo-github" class="home__social-icon"></ion-icon>
+          <ion-icon name="logo-linkedin" class="home__social-icon"></ion-icon>
+          <ion-icon name="logo-instagram" class="home__social-icon"></ion-icon>
+        </div>
+      </div>
+    </main>
+
+    <!--===== ABOUT =====-->
+    
+<section class="about" id="about">
+    <h2 class="about__title">About</h2>
+    
+    <div class="about__container bd-grid">
+      <div class="about__img">
+        <img src="assets/img/about.jpg" alt="About Image">
+      </div>
+      <div class="about__text">
+        <p>
+          Sono uno sviluppatore web appassionato con esperienza in HTML, CSS e JavaScript.
+          Ho creato diversi progetti personali e lavoro costantemente per migliorare le mie competenze.
+          Lavoro con dedizione e attenzione ai dettagli per realizzare progetti web moderni e performanti.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!--===== CONTACT ME =====-->
+  <section class="contact section bd-container" id="contact">
+   <h2 class="contact__title">Contact me</h2>
+
+   <div class="contact__container bd-grid">
+    <div class="contact__content bd-grid">
+        <div class="contact__box">
+            <ion-icon name="home-outline" class="contact__icon"></ion-icon>
+            <h3 class="contact__title">Location</h3>
+            <span class="contact__description">Vicenza-Italy</span>
+        </div>
+
+        <div class="contact__box">
+            <ion-icon name="call-outline" class="contact__icon"></ion-icon>
+            <h3 class="contact__title">Phone</h3>
+            <span class="contact__description">+39 333-653-0515</span>
+        </div>
+
+        <div class="contact__box">
+            <ion-icon name="mail-outline" class="contact__icon"></ion-icon>
+            <h3 class="contact__title">Gmail</h3>
+            <span class="contact__description">sergio03.mene+dev@gmail.com</span>
+        </div>       
+      </div>
+
+   <form action="" class="contact__form">
+    <div class="contact__inputs">
+        <input type="text" placeholder="Name" class="contact__input">
+        <input type="email" placeholder="Email" class="contact__input" value="sergio03.mene+dev@gmail.com">
+    </div>
+
+   <textarea name="" id="" cols="0" rows="7" placeholder="Message" class="contact__input text-area-input"></textarea>
+   <input type="submit" value="Send Message" class="button contact__button">
+   </form>
+  </div>
+ </section>  
+</main>
+
+<footer class="footer">
+  <div class="footer__description bd-container">
+    <h1 class="footer__title">Sergio Meneguzzo</h1>
+    <p class="footer__description">Hi I'm Sergio and this is my personal website, consult me here.</p>
+
+    <div class="footer__social">
+      <ion-icon name="logo-github" class="home__social-icon"></ion-icon>
+      <ion-icon name="logo-linkedin" class="home__social-icon"></ion-icon>
+      <ion-icon name="logo-instagram" class="home__social-icon"></ion-icon>
+    </div>
+    <p class="footer__copy">&#169; All right reserved</p>
+  </div>
+</footer>
+
+    <!--===== JS SCRIPTS =====-->
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+    <!-- MAIN -->
+    <script src="assets/js/main.js"></script>
+    <!-- ICONS -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@6.0.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+  </body>
+</html>
