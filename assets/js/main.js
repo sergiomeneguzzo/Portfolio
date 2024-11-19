@@ -19,6 +19,26 @@ function scrollTop() {
 }
 window.addEventListener('scroll', scrollTop);
 
+/*----- SWIPER -----*/
+const swiper = new Swiper('.portfolio__container', {
+  loop: false,
+  grabCursor: true,
+  spaceBetween: 10,
+  slidesPerView: 1,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+});
+
 /*----- ANIMATIONS -----*/
 
 //OVERLAY
@@ -114,7 +134,7 @@ let aboutTl = gsap.timeline({
     trigger: '.about',
     start: 'top bottom',
     end: 'top 70%',
-    markers: true,
+    //markers: true,
   },
 });
 

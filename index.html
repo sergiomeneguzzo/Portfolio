@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
     <title>Sergio Meneguzzo</title>
   </head>
   <body>
@@ -38,7 +42,7 @@
               <a href="#skills" class="nav__link">Skills</a>
             </li>
             <li class="nav__item">
-              <a href="#work" class="nav__link">Work</a>
+              <a href="#portfolio" class="nav__link">Portfolio</a>
             </li>
             <li class="nav__item">
               <a href="#contact" class="nav__link">Contact</a>
@@ -96,8 +100,49 @@
     </div>
   </section>
 
+   <!--===== PORTFOLIO =====-->
+
+   <section class="portfolio" id="portfolio">
+    <h2 class="portfolio__title">Portfolio</h2>
+    <span class="portfolio__subtitle">My recent works</span>
+ 
+    <div class="portfolio__container swiper-container">
+     <div class="swiper-wrapper">
+        <div class="portfolio__content swiper-slide">
+           <img src="assets/img/portfolio1.jpg" class="portfolio__img">
+           <h3 class="content__title">Hotel Booking</h3>
+           <span class="portfolio__project">Tropical</span>
+           <p class="portfolio__description">Text long text text text</p>
+        </div>
+
+        <div class="portfolio__content swiper-slide">
+          <img src="assets/img/fifthpocket.png" class="portfolio__img">
+          <h3 class="content__title">Home Banking</h3>
+          <span class="portfolio__project">Fifth Pocket</span>
+          <p class="portfolio__description">Text long text text text</p>
+       </div>
+
+       <div class="portfolio__content swiper-slide">
+        <img src="assets/img/portfolio3.jpg" class="portfolio__img">
+        <h3 class="content__title">ToDo</h3>
+        <span class="portfolio__project">ToDo Application</span>
+        <p class="portfolio__description">Text long text text text</p>
+       </div>
+
+       <div class="portfolio__content swiper-slide">
+        <img src="assets/img/portfolio3.jpg" class="portfolio__img">
+        <h3 class="content__title">ToDo</h3>
+        <span class="portfolio__project">ToDo Application</span>
+        <p class="portfolio__description">Text long text text text</p>
+       </div>
+
+     </div>
+     <div class="swiper-pagination"></div>
+   </div>
+   </section>
+
   <!--===== CONTACT ME =====-->
-  <section class="contact section bd-container" id="contact">
+  <section class="contact" id="contact">
    <h2 class="contact__title">Contact me</h2>
 
    <div class="contact__container bd-grid">
@@ -124,7 +169,7 @@
    <form action="" class="contact__form">
     <div class="contact__inputs">
         <input type="text" placeholder="Name" class="contact__input">
-        <input type="email" placeholder="Email" class="contact__input" value="sergio03.mene+dev@gmail.com">
+        <input type="email" placeholder="Email" class="contact__input" value="">
     </div>
 
    <textarea name="" id="" cols="0" rows="7" placeholder="Message" class="contact__input text-area-input"></textarea>
@@ -153,6 +198,8 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+    <!-- SWIPER -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- MAIN -->
     <script src="assets/js/main.js"></script>
     <!-- ICONS -->

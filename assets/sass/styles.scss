@@ -304,6 +304,57 @@ img {
   }
 }
 
+/* PORTFOLIO */
+
+.portfolio {
+  &__title {
+    font-size: var(--h1-font-size);
+    color: var(--first-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: $font-bold;
+  }
+
+  &__container {
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  &__content {
+    display: flex;
+    background-color: var(--first-color);
+    color: var(--white-color);
+    border-radius: 0.5rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(47, 10, 13, 0.25);
+  }
+
+  &__img {
+    height: 170px;
+    width: 320px;
+    object-fit: cover;
+    border-radius: 5%;
+    justify-self: center;
+    margin-bottom: var(--mb-1);
+  }
+
+  &__project {
+    font-size: var(--small-font-size);
+    color: var(--white-color);
+    margin-bottom: var(--mb-2);
+  }
+
+  .swiper-pagination {
+    position: initial;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: var(--first-color);
+  }
+}
+
 /* CONTACT ME */
 
 .contact__title {
