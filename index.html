@@ -4,10 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-  />
     <title>Sergio Meneguzzo</title>
   </head>
   <body>
@@ -103,42 +99,55 @@
    <!--===== PORTFOLIO =====-->
 
    <section class="portfolio" id="portfolio">
+    <span class="portfolio__overtitle">My recent works</span>
     <h2 class="portfolio__title">Portfolio</h2>
-    <span class="portfolio__subtitle">My recent works</span>
- 
-    <div class="portfolio__container swiper-container">
-     <div class="swiper-wrapper">
-        <div class="portfolio__content swiper-slide">
-           <img src="assets/img/portfolio1.jpg" class="portfolio__img">
-           <h3 class="content__title">Hotel Booking</h3>
-           <span class="portfolio__project">Tropical</span>
-           <p class="portfolio__description">Text long text text text</p>
+
+       <div class="portfolio__nav">
+        <span class="portfolio__item active-portfolio" data-filter="all">All</span>
+         <span class="portfolio__item" data-filter=".fullstack">Fullstack</span>
+         <span class="portfolio__item" data-filter=".frontend">FE</span>
+         <span class="portfolio__item" data-filter=".backend">BE</span>
+      </div>
+
+      <div class="portfolio__container">
+        <div class="portfolio__content mix fullstack">
+          <a href="#"><img src="assets/img/tropical.png" class="portfolio__img"></a>
+          <div class="portfolio__data">
+            <span class="portfolio__title">Hotel Booking</span>
+            <a href="#"><h2 class="portfolio__subtitle">Text text long text text</h2></a>
+            <a href="#" class="portfolio__button">View Details</a>
+          </div>
+        </div>
+        
+        <div class="portfolio__content mix fullstack">
+          <a href="#"><img src="assets/img/fifthpocket.png" class="portfolio__img"></a>
+          <div class="portfolio__data">
+            <span class="portfolio__title">Home Banking</span>
+            <a href="#"><h2 class="portfolio__subtitle">Text text long text text</h2></a>
+            <a href="#" class="portfolio__button">View Details</a>
+          </div>
         </div>
 
-        <div class="portfolio__content swiper-slide">
-          <img src="assets/img/fifthpocket.png" class="portfolio__img">
-          <h3 class="content__title">Home Banking</h3>
-          <span class="portfolio__project">Fifth Pocket</span>
-          <p class="portfolio__description">Text long text text text</p>
-       </div>
+        <div class="portfolio__content mix fullstack">
+          <a href="#"><img src="assets/img/todos.png" class="portfolio__img"></a>
+          <div class="portfolio__data">
+            <span class="portfolio__title">Todos</span>
+            <a href="#"><h2 class="portfolio__subtitle">Text text long text text</h2></a>
+            <a href="#" class="portfolio__button">View Details</a>
+          </div>
+        </div>
 
-       <div class="portfolio__content swiper-slide">
-        <img src="assets/img/portfolio3.jpg" class="portfolio__img">
-        <h3 class="content__title">ToDo</h3>
-        <span class="portfolio__project">ToDo Application</span>
-        <p class="portfolio__description">Text long text text text</p>
-       </div>
+        <div class="portfolio__content mix backend">
+          <a href="#"><img src="assets/img/translator-azure.png" class="portfolio__img"></a>
+          <div class="portfolio__data">
+            <span class="portfolio__title">Translator</span>
+            <a href="#"><h2 class="portfolio__subtitle">Text text long text text</h2></a>
+            <a href="#" class="portfolio__button">View Details</a>
+          </div>
+        </div>
 
-       <div class="portfolio__content swiper-slide">
-        <img src="assets/img/portfolio3.jpg" class="portfolio__img">
-        <h3 class="content__title">ToDo</h3>
-        <span class="portfolio__project">ToDo Application</span>
-        <p class="portfolio__description">Text long text text text</p>
-       </div>
+      </div>
 
-     </div>
-     <div class="swiper-pagination"></div>
-   </div>
    </section>
 
   <!--===== CONTACT ME =====-->
@@ -185,9 +194,9 @@
     <p class="footer__description">Hi I'm Sergio and this is my personal website, consult me here.</p>
 
     <div class="footer__social">
-      <ion-icon name="logo-github" class="home__social-icon"></ion-icon>
-      <ion-icon name="logo-linkedin" class="home__social-icon"></ion-icon>
-      <ion-icon name="logo-instagram" class="home__social-icon"></ion-icon>
+      <ion-icon name="logo-github" class="footer__social-icon"></ion-icon>
+      <ion-icon name="logo-linkedin" class="footer__social-icon"></ion-icon>
+      <ion-icon name="logo-instagram" class="footer__social-icon"></ion-icon>
     </div>
     <p class="footer__copy">&#169; All right reserved</p>
   </div>
@@ -198,8 +207,8 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
-    <!-- SWIPER -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- MIX IT UP -->
+    <script src="https://cdn.jsdelivr.net/npm/mixitup/dist/mixitup.min.js"></script>
     <!-- MAIN -->
     <script src="assets/js/main.js"></script>
     <!-- ICONS -->

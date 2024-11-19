@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 :root {
-  --first-color: #4e1116;
+  --first-color: #9b111e;
   --black-color: #000;
   --white-color: #fff;
   --first-color-light: #7b6f71;
@@ -247,7 +247,10 @@ img {
 }
 .about__title {
   font-size: var(--h1-font-size);
-  color: var(--first-color);
+  background: linear-gradient(to left, var(--black-color), var(--first-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: center;
   margin-bottom: 2rem;
   font-weight: 700;
@@ -275,53 +278,95 @@ img {
 }
 
 /* PORTFOLIO */
+.portfolio__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.portfolio__overtitle {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light, #888);
+  text-align: center;
+  display: block;
+}
 .portfolio__title {
   font-size: var(--h1-font-size);
-  color: var(--first-color);
+  background: linear-gradient(to left, var(--black-color), var(--first-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: center;
   margin-bottom: 2rem;
   font-weight: 700;
 }
-.portfolio__container {
-  max-width: 100%;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-.portfolio__content {
-  display: flex;
-  background-color: var(--first-color);
-  color: var(--white-color);
-  border-radius: 0.5rem;
-  padding: 2rem 1rem;
+.portfolio__nav {
   text-align: center;
-  box-shadow: 0 4px 8px rgba(47, 10, 13, 0.25);
-}
-.portfolio__img {
-  height: 170px;
-  width: 320px;
-  object-fit: cover;
-  border-radius: 5%;
-  justify-self: center;
-  margin-bottom: var(--mb-1);
-}
-.portfolio__project {
-  font-size: var(--small-font-size);
-  color: var(--white-color);
   margin-bottom: var(--mb-2);
 }
-.portfolio .swiper-pagination {
-  position: initial;
+.portfolio__item {
+  margin: 0 var(--mb-2);
+  cursor: pointer;
 }
-.portfolio .swiper-pagination-bullet-active {
+.portfolio__content {
+  background-color: var(--white-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(174, 190, 205, 0.3);
+}
+.portfolio__content .portfolio__img {
+  width: calc(100% - 2rem);
+  height: 150px;
+  margin: 1rem auto;
+  transition: 0.4s;
+  border-radius: 0.5rem;
+  transform: scale(1.02);
+  display: block;
+}
+.portfolio__content .portfolio__data {
+  padding: 1rem;
+}
+.portfolio__content .portfolio__data .portfolio__title {
+  font-size: var(--normal-font-size);
+  color: var(--black-color);
+  margin: var(--mb-2) 0;
+}
+.portfolio__content .portfolio__data .portfolio__subtitle {
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  color: var(--black-color);
+  margin: 0.5rem 0;
+}
+.portfolio__content .portfolio__data .portfolio__button {
+  outline: none;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
   background-color: var(--first-color);
+  color: var(--white-color);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.portfolio__content:hover {
+  box-shadow: 0 6px 8px rgba(174, 190, 205, 0.4);
+  transform: scale(1.02);
+}
+.portfolio .active-portfolio {
+  color: var(--first-color);
+  font: var(--font-semi-bold);
 }
 
 /* CONTACT ME */
 .contact__title {
   font-size: var(--h1-font-size);
-  color: var(--first-color);
+  background: linear-gradient(to left, var(--black-color), var(--first-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: center;
   margin-bottom: 2rem;
+  margin-top: 4rem;
   font-weight: 700;
 }
 
@@ -339,7 +384,6 @@ img {
   border-radius: 0.5rem;
   padding: 1.5rem;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(174, 190, 205, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .contact__container .contact__content .contact__box:hover {
@@ -366,8 +410,8 @@ img {
 .contact__container .text-area-input {
   width: 100%;
   padding: 0.8rem;
-  border: 2px solid var(--first-color);
   color: var(--black-color);
+  background-color: var(--white-color);
   border-radius: 0.5rem;
   margin-bottom: var(--mb-1);
   box-sizing: border-box;
@@ -394,7 +438,7 @@ img {
 .contact__container .contact__button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: var(--first-color);
+  background-image: linear-gradient(to right, var(--black-color), var(--first-color));
   color: var(--white-color);
   font-size: var(--normal-font-size);
   border: none;
@@ -410,7 +454,7 @@ img {
 /* FOOTER */
 .footer {
   border-radius: 0.5rem;
-  background-color: var(--first-color);
+  background-image: linear-gradient(to right, var(--black-color), var(--first-color));
   color: var(--white-color);
   text-align: center;
   padding: 2rem 1rem;
@@ -440,6 +484,9 @@ img {
   font-size: 1.5rem;
   cursor: pointer;
   transition: 0.3s;
+}
+.footer__social-icon:hover {
+  color: var(--white-color);
 }
 .footer__copy {
   margin-top: auto;
@@ -499,6 +546,11 @@ img {
   }
   .about__text {
     padding: 0 1rem;
+  }
+  .portfolio__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
   .footer {
     padding: 3rem 2rem;

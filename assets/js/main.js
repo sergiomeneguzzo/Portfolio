@@ -19,25 +19,26 @@ function scrollTop() {
 }
 window.addEventListener('scroll', scrollTop);
 
-/*----- SWIPER -----*/
-const swiper = new Swiper('.portfolio__container', {
-  loop: false,
-  grabCursor: true,
-  spaceBetween: 10,
-  slidesPerView: 1,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  breakpoints: {
-    640: {
-      slidesPerView: 1,
-    },
-    1024: {
-      slidesPerView: 3,
-    },
+/*----- MIX IT UP -----*/
+
+const mixer = mixitup('.portfolio__container', {
+  animation: {
+    duration: 600,
   },
 });
+
+/*----- LINK ACTIVE PORTFOLIO -----*/
+const activePortfolio = document.querySelectorAll('.portfolio__item');
+
+function activeLink() {
+  if (activePortfolio) {
+    activePortfolio.forEach((link) =>
+      link.classList.remove('active-portfolio'),
+    );
+    this.classList.add('active-portfolio');
+  }
+}
+activePortfolio.forEach((link) => link.addEventListener('click', activeLink));
 
 /*----- ANIMATIONS -----*/
 
@@ -168,6 +169,49 @@ aboutTl
     },
     '<0.4',
   );
+
+/*----- PORTFOLIO -----*/
+let portfolioTl = gsap.timeline({
+  defaults: {
+    duration: 2,
+    ease: 'expo.out',
+  },
+  scrollTrigger: {
+    trigger: '.portfolio',
+    start: 'top bottom',
+    end: 'top 70%',
+  },
+});
+
+//TITLE
+portfolioTl.from('.portfolio__title', {
+  opacity: 0,
+  duration: 2.5,
+  y: 25,
+});
+
+//NAV
+portfolioTl.from(
+  '.portfolio__nav',
+  {
+    opacity: 0,
+    duration: 2,
+    x: -50,
+  },
+  '<0.4',
+);
+
+//ITEMS
+portfolioTl.from(
+  '.portfolio__content',
+  {
+    opacity: 0,
+    duration: 2.5,
+    y: 25,
+    stagger: 0.2,
+  },
+  '<0.6',
+);
 
 /*----- CONTACT ME -----*/
 let contactTl = gsap.timeline({
