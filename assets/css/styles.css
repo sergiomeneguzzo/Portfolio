@@ -47,6 +47,7 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 3rem 0 0 0;
   font-family: var(--body-font);

@@ -63,6 +63,7 @@ $font-bold: 700;
 ::after {
   box-sizing: border-box;
 }
+html,
 body {
   margin: $header-height 0 0 0;
   font-family: var(--body-font);
@@ -95,6 +96,7 @@ img {
 /*----- LAYOUT -----*/
 
 .bd-grid {
+  // overflow-x: hidden;
   max-width: 1200px;
   margin-left: 1rem;
   margin-right: 1rem;
