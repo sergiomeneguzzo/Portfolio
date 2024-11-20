@@ -66,7 +66,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 
   if (!params.name || !params.email || !params.message) {
     responseMessage.textContent =
-      'Per favore, compila tutti i campi prima di inviare!';
+      'Please fill in all fields before submitting!';
     responseMessage.className = 'response-message error';
     responseMessage.style.display = 'block';
 
@@ -80,7 +80,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     .send('service_z4wztpm', 'template_snnvpxu', params, 'MM9_gOQwNfsMp_7mr')
     .then(
       (response) => {
-        responseMessage.textContent = 'Messaggio inviato con successo!';
+        responseMessage.textContent = 'Message sent successfully!';
         responseMessage.className = 'response-message success';
         responseMessage.style.display = 'block';
 
@@ -91,8 +91,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
         }, 4000);
       },
       (error) => {
-        responseMessage.textContent =
-          "Errore durante l'invio del messaggio. Riprova.";
+        responseMessage.textContent = 'Error sending message. Try again.';
         responseMessage.className = 'response-message error';
         responseMessage.style.display = 'block';
 
