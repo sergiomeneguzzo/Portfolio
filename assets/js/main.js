@@ -19,6 +19,18 @@ function scrollTop() {
 }
 window.addEventListener('scroll', scrollTop);
 
+/* SCROLL TOP ANIMATION */
+const scrollTopBtn = document.getElementById('scroll-top');
+
+scrollTopBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+});
+
 /*----- MIX IT UP -----*/
 
 const mixer = mixitup('.portfolio__container', {
@@ -39,6 +51,57 @@ function activeLink() {
   }
 }
 activePortfolio.forEach((link) => link.addEventListener('click', activeLink));
+
+/*----- EMAIL JS -----*/
+
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const responseMessage = document.getElementById('responseMessage');
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  const params = { name, email, message };
+
+  if (!params.name || !params.email || !params.message) {
+    responseMessage.textContent =
+      'Per favore, compila tutti i campi prima di inviare!';
+    responseMessage.className = 'response-message error';
+    responseMessage.style.display = 'block';
+
+    setTimeout(() => {
+      responseMessage.style.display = 'none';
+    }, 4000);
+    return;
+  }
+
+  emailjs
+    .send('service_z4wztpm', 'template_snnvpxu', params, 'MM9_gOQwNfsMp_7mr')
+    .then(
+      (response) => {
+        responseMessage.textContent = 'Messaggio inviato con successo!';
+        responseMessage.className = 'response-message success';
+        responseMessage.style.display = 'block';
+
+        document.getElementById('contactForm').reset();
+
+        setTimeout(() => {
+          responseMessage.style.display = 'none';
+        }, 4000);
+      },
+      (error) => {
+        responseMessage.textContent =
+          "Errore durante l'invio del messaggio. Riprova.";
+        responseMessage.className = 'response-message error';
+        responseMessage.style.display = 'block';
+
+        setTimeout(() => {
+          responseMessage.style.display = 'none';
+        }, 4000);
+      },
+    );
+});
 
 /*----- ANIMATIONS -----*/
 

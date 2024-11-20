@@ -96,7 +96,6 @@ img {
 /*----- LAYOUT -----*/
 
 .bd-grid {
-  // overflow-x: hidden;
   max-width: 1200px;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -184,10 +183,6 @@ img {
   z-index: var(--z-tooltip);
   transition: 0.4s;
   visibility: hidden;
-
-  &:hover {
-    background-color: var(--first-color);
-  }
 
   &__icon {
     font-size: 2rem;
@@ -327,7 +322,14 @@ img {
 
   &__overtitle {
     font-size: var(--small-font-size);
-    color: var(--text-color-light, #888);
+    background: linear-gradient(
+      to left,
+      var(--black-color),
+      var(--first-color)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: center;
     display: block;
   }
@@ -363,9 +365,17 @@ img {
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(174, 190, 205, 0.3);
 
+    .portfolio__img-container {
+      width: 100%;
+      height: 160px;
+      border-radius: 0.5rem;
+      position: relative;
+    }
+
     .portfolio__img {
-      width: calc(100% - 2rem);
-      height: 150px;
+      width: calc(90% - 2rem);
+      height: 100%;
+      object-fit: cover;
       margin: 1rem auto;
       transition: 0.4s;
       border-radius: 0.5rem;
@@ -393,7 +403,11 @@ img {
         outline: none;
         font-family: var(--body-font);
         font-size: var(--normal-font-size);
-        background-color: var(--first-color);
+        background-image: linear-gradient(
+          to right,
+          var(--black-color),
+          var(--first-color)
+        );
         color: var(--white-color);
         padding: 0.5rem 1rem;
         border: none;
@@ -441,7 +455,6 @@ img {
     .contact__box {
       background-color: var(--white-color);
       border-radius: 0.5rem;
-      //  border: 2px solid var(--first-color);
       padding: 1.5rem;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -476,7 +489,6 @@ img {
   .text-area-input {
     width: 100%;
     padding: 0.8rem;
-    // border: 2px solid var(--first-color);
     color: var(--black-color);
     background-color: var(--white-color);
     border-radius: 0.5rem;
@@ -519,16 +531,38 @@ img {
     border-radius: 0.5rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-bottom: 3rem;
 
     &:hover {
       background-color: var(--first-color-light);
     }
   }
+
+  /* Message container */
+  .response-message {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    text-align: center;
+    display: none;
+    margin-top: 0.5rem;
+  }
+
+  .response-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+
+  .response-message.error {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+  }
 }
 
 /* FOOTER */
 .footer {
+  margin-top: 3rem;
   border-radius: 0.5rem;
   background-image: linear-gradient(
     to right,

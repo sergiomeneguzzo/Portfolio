@@ -15,7 +15,7 @@
     <!--===== HOME =====-->
 
      <!--===== SCROLL TOP =====-->
-     <a href="" class="scrolltop" id="scroll-top">
+     <a href="#" class="scrolltop" id="scroll-top">
         <ion-icon name="chevron-up-outline" class="scrolltop__icon"></ion-icon>
      </a>
 
@@ -23,7 +23,7 @@
     <header class="l-header">
       <nav class="nav bd-grid">
         <div>
-          <a href="#" class="nav__logo">PORTFOLIO</a>
+          <a class="nav__logo">PORTFOLIO</a>
         </div>
 
         <div class="nav__menu" id="nav-menu">
@@ -111,43 +111,50 @@
 
       <div class="portfolio__container">
         <div class="portfolio__content mix fullstack">
-          <a href="#"><img src="assets/img/tropical.png" class="portfolio__img"></a>
+          <div class="portfolio__img-container">
+          <a><img src="assets/img/tropical.png" class="portfolio__img"></a>
+        </div>
           <div class="portfolio__data">
             <span class="portfolio__title">Hotel Booking</span>
-            <a href="#"><h2 class="portfolio__subtitle">Text text long text text</h2></a>
-            <a href="#" class="portfolio__button">View Details</a>
+            <a><h2 class="portfolio__subtitle">This project is a web application for booking hotels and houses. The frontend is built using Angular 18, while the backend is developed with Node.js and TypeScript. It integrates Passport Authentication and email confirmation. The application is connected to MongoDB Atlas for storing user data and booking details. </h2></a>
+            <a href="https://github.com/sergiomeneguzzo/Hotel-Booking-App" class="portfolio__button">View Details</a>
           </div>
         </div>
         
         <div class="portfolio__content mix fullstack">
-          <a href="#"><img src="assets/img/fifthpocket.png" class="portfolio__img"></a>
+          <div class="portfolio__img-container">
+          <a><img src="assets/img/fifthpocket.png" class="portfolio__img"></a>
+          </div>
           <div class="portfolio__data">
             <span class="portfolio__title">Home Banking</span>
-            <a href="#"><h2 class="portfolio__subtitle">Text text long text text</h2></a>
-            <a href="#" class="portfolio__button">View Details</a>
+            <a><h2 class="portfolio__subtitle">This project recreates a Home Banking system, allowing users to manage accounts, view transactions, and perform banking operations like transfers, mobile top-ups. Built with Angular 17, Node.js, and MongoDB Atlas, it features email verification and is styled with Tailwind CSS and DaisyUI for a modern, responsive design.</h2></a>
+            <a href="https://github.com/sergiomeneguzzo/Home-Banking-App" class="portfolio__button">View Details</a>
           </div>
         </div>
 
         <div class="portfolio__content mix fullstack">
-          <a href="#"><img src="assets/img/todos.png" class="portfolio__img"></a>
+          <div class="portfolio__img-container">
+          <a><img src="assets/img/todos.png" class="portfolio__img"></a>
+         </div>
           <div class="portfolio__data">
             <span class="portfolio__title">Todos</span>
-            <a href="#"><h2 class="portfolio__subtitle">Text text long text text</h2></a>
-            <a href="#" class="portfolio__button">View Details</a>
+            <a><h2 class="portfolio__subtitle">This project is a web application for managing todos. The frontend is built using Angular 17, while the backend is developed with Node.js and MongoDB. Users can create and assign todos, set due dates, mark todos as completed with checkboxes, and delete them. The todos are visible only to the user who created them and the user to whom they are assigned.</h2></a>
+            <a href="https://github.com/sergiomeneguzzo/Todos-App" class="portfolio__button">View Details</a>
           </div>
         </div>
 
         <div class="portfolio__content mix backend">
-          <a href="#"><img src="assets/img/translator-azure.png" class="portfolio__img"></a>
+          <div class="portfolio__img-container">
+          <a><img src="assets/img/translator-azure.png" class="portfolio__img"></a>
+          </div>
           <div class="portfolio__data">
             <span class="portfolio__title">Translator</span>
-            <a href="#"><h2 class="portfolio__subtitle">Text text long text text</h2></a>
-            <a href="#" class="portfolio__button">View Details</a>
+            <a><h2 class="portfolio__subtitle">This project is a real-time translation web application built with Angular (v18.2.7) for the frontend and ASP.NET Core (.NET 7.0) for the backend. It leverages Azure's translation API to offer seamless language conversion, providing users with immediate and accurate translations within the app.</h2></a>
+            <a href="https://github.com/sergiomeneguzzo/Azure-Translator" class="portfolio__button">View Details</a>
           </div>
         </div>
 
       </div>
-
    </section>
 
   <!--===== CONTACT ME =====-->
@@ -175,15 +182,16 @@
         </div>       
       </div>
 
-   <form action="" class="contact__form">
-    <div class="contact__inputs">
-        <input type="text" placeholder="Name" class="contact__input">
-        <input type="email" placeholder="Email" class="contact__input" value="">
-    </div>
+      <form id="contactForm" class="contact__form">
+        <div class="contact__inputs">
+          <input type="text" id="name" placeholder="Name" class="contact__input">
+          <input type="email" id="email" placeholder="Email" class="contact__input" value="">
+        </div>
+        <textarea id="message" cols="0" rows="7" placeholder="Message" class="contact__input text-area-input"></textarea>
+        <input type="submit" value="Send Message" class="button contact__button">
 
-   <textarea name="" id="" cols="0" rows="7" placeholder="Message" class="contact__input text-area-input"></textarea>
-   <input type="submit" value="Send Message" class="button contact__button">
-   </form>
+        <div id="responseMessage" class="response-message"></div>
+      </form>
   </div>
  </section>  
 </main>
@@ -207,6 +215,8 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+    <!-- EMAIL -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <!-- MIX IT UP -->
     <script src="https://cdn.jsdelivr.net/npm/mixitup/dist/mixitup.min.js"></script>
     <!-- MAIN -->
