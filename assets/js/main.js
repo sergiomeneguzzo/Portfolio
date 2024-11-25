@@ -11,6 +11,24 @@ const showMenu = (toggleId, navId) => {
 };
 showMenu('nav-toggle', 'nav-menu');
 
+/* CHIUSURA MENU */
+document.addEventListener('click', (e) => {
+  const nav = document.getElementById('nav-menu');
+  const toggle = document.getElementById('nav-toggle');
+
+  if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+    nav.classList.remove('show');
+  }
+});
+
+const navLinks = document.querySelectorAll('.nav__link');
+navLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    const nav = document.getElementById('nav-menu');
+    nav.classList.remove('show');
+  });
+});
+
 /* SHOW SCROLL TOP */
 function scrollTop() {
   const scrollTop = document.getElementById('scroll-top');
