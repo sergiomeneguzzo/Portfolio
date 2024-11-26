@@ -85,6 +85,35 @@ function activeLink() {
 }
 activePortfolio.forEach((link) => link.addEventListener('click', activeLink));
 
+// Rileva le sezioni e i link di navigazione
+const sections = document.querySelectorAll('section');
+const navLinks2 = document.querySelectorAll('.nav__link');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+
+  // Trova la sezione visibile
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 50; // Margine per un migliore rilevamento
+    const sectionHeight = section.offsetHeight;
+
+    if (
+      window.scrollY >= sectionTop &&
+      window.scrollY < sectionTop + sectionHeight
+    ) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  // Aggiorna la classe `active` nei link di navigazione
+  navLinks2.forEach((link) => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
+});
+
 /*----- EMAIL JS -----*/
 
 document.getElementById('contactForm').addEventListener('submit', function (e) {

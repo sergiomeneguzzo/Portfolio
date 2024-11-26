@@ -142,6 +142,19 @@ img {
   top: 2.125rem;
   background-color: var(--first-color);
 }
+.nav .nav__link.active {
+  position: relative;
+  color: var(--first-color);
+}
+.nav .nav__link.active::after {
+  position: absolute;
+  content: "";
+  width: 1.5rem;
+  height: 0.1875rem;
+  left: 0.125rem;
+  top: 2.125rem;
+  background-color: var(--first-color);
+}
 .nav__logo {
   font-size: var(--normal-font-size);
   color: var(--white-color);
