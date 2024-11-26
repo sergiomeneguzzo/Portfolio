@@ -49,6 +49,21 @@ scrollTopBtn.addEventListener('click', (e) => {
   });
 });
 
+/* SELECT NAV ANIMATION */
+document.querySelectorAll('.nav__link').forEach((link) => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    targetElement.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  });
+});
+
 /*----- MIX IT UP -----*/
 
 const mixer = mixitup('.portfolio__container', {
