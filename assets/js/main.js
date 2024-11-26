@@ -265,6 +265,50 @@ aboutTl
     '<0.4',
   );
 
+/*----- SKILLS -----*/
+let skillsTl = gsap.timeline({
+  defaults: {
+    duration: 2,
+    ease: 'expo.out',
+  },
+  scrollTrigger: {
+    trigger: '.skills',
+    start: 'top bottom',
+    end: 'top 70%',
+  },
+});
+
+// TITLE
+skillsTl.from('.skills__title', {
+  opacity: 0,
+  duration: 2.5,
+  y: 25,
+});
+
+// CATEGORIES
+skillsTl.from(
+  '.skills__category',
+  {
+    opacity: 0,
+    duration: 2.5,
+    y: 25,
+    stagger: 0.2,
+  },
+  '<0.4',
+);
+
+// ICONS
+skillsTl.from(
+  '.skills__icon',
+  {
+    opacity: 0,
+    duration: 2,
+    scale: 0.5,
+    stagger: 0.2,
+  },
+  '<0.6',
+);
+
 /*----- PORTFOLIO -----*/
 let portfolioTl = gsap.timeline({
   defaults: {

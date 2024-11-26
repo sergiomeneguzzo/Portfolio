@@ -294,7 +294,6 @@ img {
 .skills {
   background-color: var(--black-color);
   padding: 2rem 1.5rem;
-  /* Tablet and Desktop Styles */
 }
 .skills__title {
   font-size: var(--h1-font-size);
@@ -350,29 +349,6 @@ img {
 .skills__name {
   font-size: var(--smaller-font-size);
   opacity: 0.8;
-}
-@media screen and (min-width: 768px) {
-  .skills__title {
-    font-size: var(--h1-font-size);
-  }
-  .skills__content {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .skills__list {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-  }
-  .skills__category-title {
-    font-size: var(--h3-font-size);
-    margin-bottom: 1.5rem;
-  }
-  .skills__icon {
-    font-size: 2.5rem;
-  }
-  .skills__name {
-    font-size: var(--small-font-size);
-  }
 }
 
 /* PORTFOLIO */
@@ -678,6 +654,27 @@ img {
   }
   .about__text {
     padding: 0 1rem;
+  }
+  .skills__title {
+    font-size: var(--h1-font-size);
+  }
+  .skills__content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .skills__list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  .skills__category-title {
+    font-size: var(--h3-font-size);
+    margin-bottom: 1.5rem;
+  }
+  .skills__icon {
+    font-size: 2.5rem;
+  }
+  .skills__name {
+    font-size: var(--small-font-size);
   }
   .portfolio__container {
     display: grid;

@@ -400,36 +400,6 @@ img {
     font-size: var(--smaller-font-size);
     opacity: 0.8;
   }
-
-  /* Tablet and Desktop Styles */
-  @media screen and (min-width: 768px) {
-    &__title {
-      font-size: var(--h1-font-size);
-    }
-
-    &__content {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    &__list {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-
-    &__category-title {
-      font-size: var(--h3-font-size);
-      margin-bottom: 1.5rem;
-    }
-
-    &__icon {
-      font-size: 2.5rem;
-    }
-
-    &__name {
-      font-size: var(--small-font-size);
-    }
-  }
 }
 
 /* PORTFOLIO */
@@ -803,6 +773,36 @@ img {
 
     &__text {
       padding: 0 1rem;
+    }
+  }
+
+  //SKILLS
+  .skills {
+    &__title {
+      font-size: var(--h1-font-size);
+    }
+
+    &__content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    &__list {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    &__category-title {
+      font-size: var(--h3-font-size);
+      margin-bottom: 1.5rem;
+    }
+
+    &__icon {
+      font-size: 2.5rem;
+    }
+
+    &__name {
+      font-size: var(--small-font-size);
     }
   }
 
