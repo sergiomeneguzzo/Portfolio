@@ -85,16 +85,15 @@ function activeLink() {
 }
 activePortfolio.forEach((link) => link.addEventListener('click', activeLink));
 
-// Rileva le sezioni e i link di navigazione
+/*----- SCROLL SECTIONS ACTIVE LINK -----*/
 const sections = document.querySelectorAll('section');
 const navLinks2 = document.querySelectorAll('.nav__link');
 
 window.addEventListener('scroll', () => {
   let current = '';
 
-  // Trova la sezione visibile
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 50; // Margine per un migliore rilevamento
+    const sectionTop = section.offsetTop - 50;
     const sectionHeight = section.offsetHeight;
 
     if (
@@ -105,7 +104,6 @@ window.addEventListener('scroll', () => {
     }
   });
 
-  // Aggiorna la classe `active` nei link di navigazione
   navLinks2.forEach((link) => {
     link.classList.remove('active');
     if (link.getAttribute('href') === `#${current}`) {
