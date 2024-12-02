@@ -814,7 +814,7 @@ img {
     }
 
     &__icon {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
     }
 
     &__name {
@@ -828,6 +828,11 @@ img {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
+
+  // .contact__form {
+  //   max-width: 800px; /* Scegli una larghezza massima adeguata */
+  //   margin: 0 auto; /* Centra la form orizzontalmente */
+  // }
 
   //FOOTER
   .footer {
