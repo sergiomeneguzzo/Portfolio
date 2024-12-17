@@ -47,6 +47,10 @@
   box-sizing: border-box;
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 html {
   scroll-padding-top: 3rem;
 }
@@ -79,6 +83,8 @@ a {
 img {
   max-width: 100%;
   height: auto;
+  pointer-events: none;
+  user-select: none;
 }
 
 /*----- LAYOUT -----*/
