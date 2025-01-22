@@ -139,7 +139,7 @@ img {
       background-image: linear-gradient(var(--black-color), var(--first-color));
       width: 90%;
       height: 45%;
-      padding: 1.2rem;
+      padding: 1.3rem;
       border-radius: 0 0 1rem 1rem;
       transition: 0.5s;
     }
@@ -353,7 +353,7 @@ img {
 /* SKILLS */
 .skills {
   background-color: var(--black-color);
-  padding: 2rem 1.5rem;
+  padding: 2rem 1rem;
 
   &__title {
     font-size: var(--h1-font-size);
@@ -403,7 +403,6 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
     color: var(--white-color);
     transition: all 0.3s ease;
     text-align: center;
@@ -835,10 +834,10 @@ img {
     gap: 2rem;
   }
 
-  // .contact__form {
-  //   max-width: 800px; /* Scegli una larghezza massima adeguata */
-  //   margin: 0 auto; /* Centra la form orizzontalmente */
-  // }
+  .contact__form {
+    max-width: 800px;
+    margin: 0 auto;
+  }
 
   //FOOTER
   .footer {
