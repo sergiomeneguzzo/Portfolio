@@ -143,6 +143,8 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 
 /*----- ANIMATIONS -----*/
 
+gsap.registerPlugin(ScrollTrigger);
+
 //OVERLAY
 let overlay = gsap.timeline();
 overlay
@@ -315,7 +317,58 @@ skillsTl.from(
   '<0.6',
 );
 
-/*----- PORTFOLIO -----*/
+/*----- CAREER -----*/
+document.addEventListener('DOMContentLoaded', () => {
+  // Animazione della linea verticale
+  gsap.to('.career__line', {
+    scrollTrigger: {
+      trigger: '.career__timeline',
+      start: 'top center',
+      end: 'bottom center',
+      scrub: 1,
+    },
+    scaleY: 1,
+    ease: 'none',
+  });
+
+  // Animazione della pallina
+  const timeline = document.querySelector('.career__timeline');
+  const timelineHeight = timeline.offsetHeight - 20; // Sottrai l'altezza della pallina
+
+  gsap.to('.career__ball', {
+    scrollTrigger: {
+      trigger: '.career__timeline',
+      start: 'top center',
+      end: 'bottom center',
+      scrub: 1,
+    },
+    y: timelineHeight,
+    ease: 'none',
+  });
+
+  // Animazione degli elementi della timeline
+  const items = document.querySelectorAll('.career__item');
+
+  items.forEach((item, index) => {
+    gsap.fromTo(
+      item,
+      {
+        opacity: 0,
+        x: -30,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: item,
+          start: 'top center+=100',
+          toggleActions: 'play none none reverse',
+        },
+      },
+    );
+  });
+});
 
 /*----- CONTACT ME -----*/
 let contactTl = gsap.timeline({

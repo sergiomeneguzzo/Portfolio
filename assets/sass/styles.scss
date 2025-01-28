@@ -415,6 +415,7 @@ img {
 }
 
 /* CAREER */
+/* CAREER */
 .career {
   padding: var(--mb-4) 0;
   background-color: var(--black-color);
@@ -437,34 +438,39 @@ img {
   &__timeline {
     position: relative;
     padding-left: 3rem;
+    min-height: 650px;
+  }
 
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 2px;
-      background: var(--first-color);
-    }
+  // Linea verticale della timeline
+  &__line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--first-color);
+    transform-origin: top;
+    transform: scaleY(0); // Inizialmente invisibile
+  }
+
+  // Pallina che si muove
+  &__ball {
+    position: absolute;
+    left: -9px; // Centra la pallina sulla linea
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+    border: 2px solid var(--black-color);
+    z-index: 2;
   }
 
   &__item {
     position: relative;
     padding-bottom: var(--mb-4);
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: -3.5rem;
-      top: 0;
-      width: 20px;
-      height: 20px;
-      background-color: var(--first-color);
-      border-radius: 50%;
-      border: 2px solid var(--black-color);
-      transform: translateY(0);
-    }
+    opacity: 0; // Per l'animazione di fade in
+    transform: translateX(-30px); // Per l'animazione di slide in
   }
 
   &__role {
