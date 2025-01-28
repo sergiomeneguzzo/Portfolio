@@ -130,7 +130,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
         }, 4000);
       },
       (error) => {
-        responseMessage.textContent = 'Error sending message. Try again.';
+        responseMessage.textContent = 'Error sending message. Try again later';
         responseMessage.className = 'response-message error';
         responseMessage.style.display = 'block';
 
@@ -286,14 +286,6 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       '-=0.6',
     );
-
-  let resizeTimeout;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 250);
-  });
 });
 
 /*----- SKILLS -----*/
@@ -362,14 +354,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `-=${itemIndex ? 0.3 : 0}`,
       );
     });
-  });
-
-  let resizeTimeout;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 250);
   });
 });
 
@@ -557,13 +541,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     box.addEventListener('mouseenter', () => hoverTl.play());
     box.addEventListener('mouseleave', () => hoverTl.reverse());
-  });
-
-  let resizeTimeout;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 250);
   });
 });
