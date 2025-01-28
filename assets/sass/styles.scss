@@ -415,7 +415,6 @@ img {
 }
 
 /* CAREER */
-/* CAREER */
 .career {
   padding: var(--mb-4) 0;
   background-color: var(--black-color);
@@ -441,7 +440,6 @@ img {
     min-height: 650px;
   }
 
-  // Linea verticale della timeline
   &__line {
     position: absolute;
     left: 0;
@@ -450,13 +448,12 @@ img {
     height: 100%;
     background: var(--first-color);
     transform-origin: top;
-    transform: scaleY(0); // Inizialmente invisibile
+    transform: scaleY(0);
   }
 
-  // Pallina che si muove
   &__ball {
     position: absolute;
-    left: -9px; // Centra la pallina sulla linea
+    left: -10px;
     top: 0;
     width: 20px;
     height: 20px;
@@ -469,8 +466,8 @@ img {
   &__item {
     position: relative;
     padding-bottom: var(--mb-4);
-    opacity: 0; // Per l'animazione di fade in
-    transform: translateX(-30px); // Per l'animazione di slide in
+    opacity: 0;
+    transform: translateX(-30px);
   }
 
   &__role {
@@ -534,11 +531,6 @@ img {
       padding: 1.5rem;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-      &:hover {
-        box-shadow: 0 6px 8px rgba(174, 190, 205, 0.4);
-        transform: translateY(-5px);
-      }
 
       .contact__icon {
         font-size: 2rem;
@@ -796,18 +788,22 @@ img {
   .career {
     &__timeline {
       padding-left: 4rem;
+    }
 
-      &::before {
-        left: 1rem;
-      }
+    &__line {
+      left: 1rem;
+      width: 3px;
+    }
+
+    &__ball {
+      left: calc(1rem - 11px);
+      width: 24px;
+      height: 24px;
     }
 
     &__item {
-      &::before {
-        left: -3.7rem;
-        width: 1.5rem;
-        height: 1.5rem;
-      }
+      max-width: 600px;
+      margin-left: 1rem;
     }
   }
 

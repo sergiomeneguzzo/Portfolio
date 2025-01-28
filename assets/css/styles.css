@@ -369,7 +369,6 @@ img {
 }
 
 /* CAREER */
-/* CAREER */
 .career {
   padding: var(--mb-4) 0;
   background-color: var(--black-color);
@@ -404,7 +403,7 @@ img {
 }
 .career__ball {
   position: absolute;
-  left: -9px;
+  left: -10px;
   top: 0;
   width: 20px;
   height: 20px;
@@ -472,10 +471,6 @@ img {
   padding: 1.5rem;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.contact__container .contact__content .contact__box:hover {
-  box-shadow: 0 6px 8px rgba(174, 190, 205, 0.4);
-  transform: translateY(-5px);
 }
 .contact__container .contact__content .contact__box .contact__icon {
   font-size: 2rem;
@@ -682,13 +677,18 @@ img {
   .career__timeline {
     padding-left: 4rem;
   }
-  .career__timeline::before {
+  .career__line {
     left: 1rem;
+    width: 3px;
   }
-  .career__item::before {
-    left: -3.7rem;
-    width: 1.5rem;
-    height: 1.5rem;
+  .career__ball {
+    left: calc(1rem - 11px);
+    width: 24px;
+    height: 24px;
+  }
+  .career__item {
+    max-width: 600px;
+    margin-left: 1rem;
   }
   .footer {
     padding: 1.5rem 1rem;

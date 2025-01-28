@@ -229,97 +229,152 @@ homeTl
   );
 
 /*----- ABOUT -----*/
-let aboutTl = gsap.timeline({
-  defaults: {
-    duration: 2.5,
-    ease: 'expo.out',
-  },
-  scrollTrigger: {
-    trigger: '.about',
-    start: 'top bottom',
-    end: 'top 70%',
-    //markers: true,
-  },
+document.addEventListener('DOMContentLoaded', () => {
+  const aboutTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.about',
+      start: 'top center+=100',
+      end: 'bottom center',
+      toggleActions: 'play reverse play reverse',
+    },
+  });
+
+  //TITLE
+  aboutTl
+    .fromTo(
+      '.about__title',
+      {
+        opacity: 0,
+        y: 30,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+      },
+    )
+
+    //PIC
+    .fromTo(
+      '.about__img',
+      {
+        opacity: 0,
+        x: -100,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+      },
+      '-=0.4',
+    )
+
+    //TEXT
+    .fromTo(
+      '.about__text',
+      {
+        opacity: 0,
+        x: 100,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+      },
+      '-=0.6',
+    );
+
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 250);
+  });
 });
-
-//TITLE
-aboutTl
-  .from('.about__title', {
-    opacity: 0,
-    duration: 3.5,
-    y: 25,
-  })
-
-  //IMG
-  .from(
-    '.about__img',
-    {
-      opacity: 0,
-      duration: 2.5,
-      x: 60,
-    },
-    '<0.6',
-  )
-
-  //INFORMATION
-  .from(
-    '.about__text',
-    {
-      opacity: 0,
-      duration: 3.5,
-      y: 25,
-      ease: 'expo.out',
-    },
-    '<0.4',
-  );
 
 /*----- SKILLS -----*/
-let skillsTl = gsap.timeline({
-  defaults: {
-    duration: 2,
-    ease: 'expo.out',
-  },
-  scrollTrigger: {
-    trigger: '.skills',
-    start: 'top bottom',
-    end: 'top 70%',
-  },
+document.addEventListener('DOMContentLoaded', () => {
+  const skillsTitleTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.skills__title',
+      start: 'top center+=200',
+      toggleActions: 'play reverse play reverse',
+    },
+  });
+
+  skillsTitleTl.fromTo(
+    '.skills__title',
+    {
+      opacity: 0,
+      y: 30,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: 'power2.out',
+    },
+  );
+
+  document.querySelectorAll('.skills__category').forEach((category, index) => {
+    const categoryTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: category,
+        start: 'top center+=300',
+        toggleActions: 'play reverse play reverse',
+      },
+    });
+
+    categoryTl.fromTo(
+      category.querySelector('.skills__category-title'),
+      {
+        opacity: 0,
+        y: 20,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'power2.out',
+      },
+    );
+
+    const items = category.querySelectorAll('.skills__item');
+    items.forEach((item, itemIndex) => {
+      categoryTl.fromTo(
+        item,
+        {
+          opacity: 0,
+          scale: 0.5,
+          rotate: -180,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          rotate: 0,
+          duration: 0.4,
+          ease: 'back.out(1.7)',
+        },
+        `-=${itemIndex ? 0.3 : 0}`,
+      );
+    });
+  });
+
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 250);
+  });
 });
-
-// TITLE
-skillsTl.from('.skills__title', {
-  opacity: 0,
-  duration: 2.5,
-  y: 25,
-});
-
-// CATEGORIES
-skillsTl.from(
-  '.skills__category',
-  {
-    opacity: 0,
-    duration: 2.5,
-    y: 25,
-    stagger: 0.2,
-  },
-  '<0.4',
-);
-
-// ICONS
-skillsTl.from(
-  '.skills__icon',
-  {
-    opacity: 0,
-    duration: 2,
-    scale: 0.5,
-    stagger: 0.2,
-  },
-  '<0.6',
-);
 
 /*----- CAREER -----*/
 document.addEventListener('DOMContentLoaded', () => {
-  // Animazione della linea verticale
   gsap.to('.career__line', {
     scrollTrigger: {
       trigger: '.career__timeline',
@@ -331,9 +386,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ease: 'none',
   });
 
-  // Animazione della pallina
   const timeline = document.querySelector('.career__timeline');
-  const timelineHeight = timeline.offsetHeight - 20; // Sottrai l'altezza della pallina
+  const timelineHeight = timeline.offsetHeight - 20;
 
   gsap.to('.career__ball', {
     scrollTrigger: {
@@ -346,7 +400,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ease: 'none',
   });
 
-  // Animazione degli elementi della timeline
   const items = document.querySelectorAll('.career__item');
 
   items.forEach((item, index) => {
@@ -371,44 +424,146 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*----- CONTACT ME -----*/
-let contactTl = gsap.timeline({
-  defaults: {
-    duration: 2.5,
-    ease: 'expo.out',
-  },
-  scrollTrigger: {
-    trigger: '.contact',
-    start: 'top bottom',
-    end: 'top 70%',
-  },
+document.addEventListener('DOMContentLoaded', () => {
+  //TITLE
+  const contactTitleTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.contact__title',
+      start: 'top center+=200',
+      toggleActions: 'play reverse play reverse',
+    },
+  });
+
+  contactTitleTl.fromTo(
+    '.contact__title',
+    {
+      opacity: 0,
+      y: 30,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: 'power2.out',
+    },
+  );
+
+  //BOXES
+  const contactBoxesTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.contact__content',
+      start: 'top center+=200',
+      toggleActions: 'play reverse play reverse',
+    },
+  });
+
+  document.querySelectorAll('.contact__box').forEach((box, index) => {
+    contactBoxesTl.fromTo(
+      box,
+      {
+        opacity: 0,
+        y: 50,
+        scale: 0.8,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.6,
+        ease: 'back.out(1.7)',
+      },
+      index * 0.2,
+    );
+  });
+
+  //FORM
+  const formTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.contact__form',
+      start: 'top center+=200',
+      toggleActions: 'play reverse play reverse',
+    },
+  });
+
+  //INPUTS
+  formTl
+    .fromTo(
+      '.contact__inputs',
+      {
+        opacity: 0,
+        x: -50,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+      },
+    )
+    .fromTo(
+      '.text-area-input',
+      {
+        opacity: 0,
+        x: 50,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+      },
+      '-=0.6',
+    )
+    .fromTo(
+      '.contact__button',
+      {
+        opacity: 0,
+        y: 30,
+        scale: 0.8,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.6,
+        ease: 'back.out(1.7)',
+      },
+      '-=0.4',
+    );
+
+  //HOVER EFFECT
+  const contactBoxes = document.querySelectorAll('.contact__box');
+  contactBoxes.forEach((box) => {
+    const icon = box.querySelector('.contact__icon');
+
+    const hoverTl = gsap.timeline({ paused: true });
+
+    hoverTl
+      .to(box, {
+        y: -5,
+        duration: 0.3,
+        ease: 'power2.out',
+        boxShadow: '0 6px 8px rgba(174, 190, 205, 0.4)',
+      })
+      .to(
+        icon,
+        {
+          scale: 1.2,
+          duration: 0.3,
+          ease: 'power2.out',
+        },
+        '-=0.3',
+      );
+
+    box.addEventListener('mouseenter', () => hoverTl.play());
+    box.addEventListener('mouseleave', () => hoverTl.reverse());
+  });
+
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 250);
+  });
 });
-
-//TITLE
-contactTl.from('.contact__title', {
-  opacity: 0,
-  duration: 3.5,
-  y: 25,
-});
-
-//CONTACT CONTENT
-contactTl.from(
-  '.contact__content',
-  {
-    opacity: 0,
-    duration: 3.5,
-    y: 25,
-    stagger: 0.2,
-  },
-  '<0.4',
-);
-
-//FORM
-contactTl.from(
-  '.contact__form',
-  {
-    opacity: 0,
-    duration: 3.5,
-    y: 25,
-  },
-  '<0.4',
-);
