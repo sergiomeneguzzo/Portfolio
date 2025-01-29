@@ -430,6 +430,7 @@ img {
     margin-bottom: var(--mb-4);
     background: var(--first-color);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
   }
@@ -516,6 +517,10 @@ img {
   font-weight: $font-bold;
 }
 
+.contact__description {
+  font-size: var(--normal-font-size);
+}
+
 .contact__container {
   row-gap: 2.5rem;
 
@@ -565,6 +570,11 @@ img {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+  }
+
+  .contact__form {
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .text-area-input {
@@ -775,6 +785,10 @@ img {
       margin-bottom: 1.5rem;
     }
 
+    &__item {
+      cursor: pointer;
+    }
+
     &__icon {
       font-size: 1.8rem;
     }
@@ -805,6 +819,11 @@ img {
       max-width: 600px;
       margin-left: 1rem;
     }
+  }
+
+  //CONTACT
+  .contact__container {
+    cursor: pointer;
   }
 
   //FOOTER
