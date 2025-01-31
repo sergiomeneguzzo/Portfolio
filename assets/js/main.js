@@ -414,7 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollTrigger: {
       trigger: '.contact__title',
       start: 'top center+=200',
-      end: 'bottom center-=620',
+      end: 'bottom center-=680',
       toggleActions: 'play reverse play reverse',
     },
   });
