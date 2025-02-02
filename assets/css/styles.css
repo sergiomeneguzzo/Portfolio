@@ -300,6 +300,11 @@ img {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   justify-self: center;
 }
+.about__img img {
+  width: 100%;
+  display: block;
+  border-radius: inherit;
+}
 .about__text {
   color: var(--white-color);
   font-size: var(--normal-font-size);
