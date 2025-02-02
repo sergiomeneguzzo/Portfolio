@@ -116,7 +116,12 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   }
 
   emailjs
-    .send('service_z4wztpm', 'template_snnvpxu', params, 'MM9_gOQwNfsMp_7mr')
+    .send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      params,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+    )
     .then(
       (response) => {
         responseMessage.textContent = 'Message sent successfully!';
@@ -161,14 +166,14 @@ let homeTl = gsap.timeline({
   },
 });
 //IMG
-homeTl.from(
-  '.home__img',
-  {
-    opacity: 0,
-    x: 60,
-  },
-  0.9,
-);
+// homeTl.from(
+//   '.home__img',
+//   {
+//     opacity: 0,
+//     x: 60,
+//   },
+//   0.9,
+// );
 
 //INFORMATION
 homeTl

@@ -1,0 +1,18 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Welcome to my personal portfolio! This project is built using HTML, SCSS, and JavaScript, with smooth animations powered by GSAP.\r It showcases my skills, projects, and experience as a developer.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.83.4",
+    "vite": "^6.0.11"
+  }
+}
