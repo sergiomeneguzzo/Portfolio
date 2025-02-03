@@ -637,10 +637,16 @@ img {
     border: 1px solid #c3e6cb;
   }
 
-  .response-message.error {
+  .response-message.warning {
     background-color: #fff3cd;
     color: #856404;
     border: 1px solid #ffeeba;
+  }
+
+  .response-message.error {
+    background-color: #fba8b1;
+    color: #9b111e;
+    border: 1px solid #f99aa5;
   }
 }
 

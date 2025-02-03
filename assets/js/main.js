@@ -93,6 +93,8 @@ window.addEventListener('scroll', () => {
 
 /*----- EMAIL JS -----*/
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 document.getElementById('contactForm').addEventListener('submit', function (e) {
   e.preventDefault();
 
@@ -106,7 +108,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   if (!params.name || !params.email || !params.message) {
     responseMessage.textContent =
       'Please fill in all fields before submitting!';
-    responseMessage.className = 'response-message error';
+    responseMessage.className = 'response-message warning';
     responseMessage.style.display = 'block';
 
     setTimeout(() => {
@@ -115,15 +117,16 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     return;
   }
 
-  emailjs
-    .send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      params,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-    )
-    .then(
-      (response) => {
+  fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(params),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.success) {
         responseMessage.textContent = 'Message sent successfully!';
         responseMessage.className = 'response-message success';
         responseMessage.style.display = 'block';
@@ -133,8 +136,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
         setTimeout(() => {
           responseMessage.style.display = 'none';
         }, 4000);
-      },
-      (error) => {
+      } else {
         responseMessage.textContent = 'Error sending message. Try again later';
         responseMessage.className = 'response-message error';
         responseMessage.style.display = 'block';
@@ -142,8 +144,17 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
         setTimeout(() => {
           responseMessage.style.display = 'none';
         }, 4000);
-      },
-    );
+      }
+    })
+    .catch((error) => {
+      responseMessage.textContent = 'Error sending message. Try again later';
+      responseMessage.className = 'response-message error';
+      responseMessage.style.display = 'block';
+
+      setTimeout(() => {
+        responseMessage.style.display = 'none';
+      }, 4000);
+    });
 });
 
 /*----- ANIMATIONS -----*/
