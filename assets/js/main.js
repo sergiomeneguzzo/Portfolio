@@ -1,3 +1,4 @@
+import '../sass/styles.scss';
 import '../sass/cookie-policy.scss';
 
 /* MENU SHOW */
