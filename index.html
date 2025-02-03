@@ -6,31 +6,18 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/sass/styles.scss" />
     <title>Sergio Meneguzzo</title>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EW6439QPSN"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      
-      gtag('config', 'G-EW6439QPSN');
-    </script>
   </head>
+
   <body>
-    <!-- OVERLAY -->
     <div class="overlay first"></div>
     <div class="overlay second"></div>
     <div class="overlay third"></div>
 
-    <!--===== HOME =====-->
     <section id="home">
-
-     <!--===== SCROLL TOP =====-->
      <a href="#" class="scrolltop" id="scroll-top">
         <ion-icon name="chevron-up-outline" class="scrolltop__icon"></ion-icon>
      </a>
 
-    <!-- HEADER -->
     <header class="l-header">
       <nav class="nav bd-grid">
         <div>
@@ -63,7 +50,6 @@
       </nav>
     </header>
 
-    <!-- MAIN -->
     <main class="l-main bd-grid">
       <div class="home">
         <div class="home__information">
@@ -87,15 +73,13 @@
           <a href="https://www.linkedin.com/in/sergio-meneguzzo" target="_blank">
           <ion-icon name="logo-linkedin" class="home__social-icon"></ion-icon>
           </a>
-          <a href="https://t.me/sergio_meneguzzo"  target="_blank">
-            <ion-icon name="paper-plane-outline" class="home__social-icon"></ion-icon>
+          <a href="https://www.instagram.com/sergio_meneguzzo"  target="_blank">
+            <ion-icon name="logo-instagram" class="home__social-icon"></ion-icon>
           </a>
         </div>
       </div>
     </main>
   </section>
-
-    <!--===== ABOUT =====-->
     
 <section class="about" id="about">
     <h2 class="about__title">About</h2>
@@ -113,8 +97,6 @@
       </div>
     </div>
   </section>
-
-  <!--===== SKILLS =====-->
 
 <section class="skills" id="skills">
   <h2 class="skills__title">Skills</h2>
@@ -190,16 +172,13 @@
   </div>
 </section>
 
-   <!--===== CAREER =====-->
    <section class="career" id="career">
     <div class="career__container">
       <h2 class="career__title">My career & experience</h2>
       
       <div class="career__timeline">
-        <!-- Linea verticale della timeline -->
         <div class="career__line"></div>
         
-        <!-- Pallina che si muove -->
         <div class="career__ball"></div>
         
         <div class="career__item">
@@ -228,7 +207,6 @@
     </div>
   </section>
 
-  <!--===== CONTACT ME =====-->
   <section class="contact" id="contact">
    <h2 class="contact__title">Contact me</h2>
 
@@ -279,24 +257,29 @@
       <a href="https://www.linkedin.com/in/sergio-meneguzzo" target="_blank">
       <ion-icon name="logo-linkedin" class="footer__social-icon"></ion-icon>
       </a>
-      <a href="https://t.me/sergio_meneguzzo"  target="_blank">
-        <ion-icon name="paper-plane-outline" class="footer__social-icon"></ion-icon>
-      </a>
+      <a href="https://www.instagram.com/sergio_meneguzzo" target="_blank">
+        <ion-icon name="logo-instagram" class="footer__social-icon"></ion-icon>
+        </a>
     </div>
     <p class="footer__copy">&#169; All rights reserved</p>
   </div>
 </footer>
 
-    <!--===== JS SCRIPTS =====-->
-
- <!-- GSAP -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-content">
+    <p>Questo sito utilizza i cookie per migliorare l'esperienza utente.</p>
+    <div class="cookie-buttons">
+      <button class="cookie-accept" onclick="acceptCookies()">Accetta</button>
+      <button class="cookie-decline" onclick="declineCookies()">Rifiuta</button>
+    </div>
+  </div>
+</div>
+  </body>
+   <!-- GSAP -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
-<!-- EMAIL -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <!-- ICONS -->
 <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@6.0.0/dist/ionicons/ionicons.esm.js"></script>
 <!-- MAIN -->
 <script type="module" src="assets/js/main.js"></script>
-  </body>
 </html>

@@ -650,6 +650,112 @@ img {
   }
 }
 
+/* COOKIE BANNER */
+.cookie-banner {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(50, 50, 50, 0.5),
+    rgba(20, 20, 20, 0.8)
+  );
+  padding: var(--mb-2);
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out;
+  backdrop-filter: blur(5px);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.cookie-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--mb-2);
+  color: var(--white-color);
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  p {
+    font-size: var(--normal-font-size);
+  }
+
+  .cookie-buttons {
+    display: flex;
+    gap: var(--mb-2);
+
+    button {
+      padding: 0.6rem 1.8rem;
+      border-radius: 6px;
+      font-weight: var(--font-medium);
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      font-size: 0.9rem;
+    }
+
+    .cookie-accept {
+      background: var(--first-color);
+      color: var(--white-color);
+      border: none;
+      box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+      animation: pulse 1.5s infinite;
+
+      &:hover {
+        background: var(--first-color-dark);
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+        animation: none;
+      }
+    }
+
+    .cookie-decline {
+      background: transparent;
+      border: 1px solid var(--first-color);
+      color: var(--first-color);
+      box-shadow: 0 0 8px rgba(255, 0, 0, 0.3);
+
+      &:hover {
+        background: rgba(255, 0, 0, 0.2);
+        box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+  }
+}
+
 /* FOOTER */
 .footer {
   margin-top: 3rem;
