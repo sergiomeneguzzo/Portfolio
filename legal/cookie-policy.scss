@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --first-color: #9b111e;
+  --black-color: #000;
+  --white-color: #fff;
+  --first-color-light: #7b6f71;
+  --first-color-lighten: #fbf9f9;
+  --body-font: 'Poppins', sans-serif;
+  --h1-font-size: 2.5rem;
+  --h2-font-size: 1rem;
+  --normal-font-size: 0.93rem;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+}
+
+.cookie-page {
+  font-family: var(--body-font);
+  line-height: 1.6;
+  background-color: var(--first-color-lighten);
+  color: var(--black-color);
+  margin: 0;
+  padding: 0;
+}
+
+.cookie-header {
+  background-color: var(--first-color);
+  color: var(--white-color);
+  text-align: center;
+  padding: 20px;
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-bold);
+}
+
+.cookie-container {
+  max-width: 800px;
+  margin: 30px auto;
+  background: var(--white-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cookie-container h2 {
+  color: var(--first-color);
+  border-bottom: 2px solid var(--first-color);
+  padding-bottom: 5px;
+  margin-top: 20px;
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+.cookie-container p {
+  font-size: var(--normal-font-size);
+  color: var(--black-color);
+}
+
+.cookie-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cookie-container ul li {
+  background: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16"%3E%3Cpath d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zM6.354 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L7.707 8l1.647 1.646a.5.5 0 0 1-.708.708l-2-2z"/%3E%3C/svg%3E')
+    no-repeat left center;
+  background-size: 16px;
+  padding-left: 24px;
+  margin-bottom: 10px;
+}
+
+.cookie-container a {
+  color: var(--first-color);
+  text-decoration: none;
+  font-weight: var(--font-medium);
+}
+
+.cookie-container a:hover {
+  text-decoration: underline;
+}
+
+.cookie-footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--first-color);
+  color: var(--white-color);
+  margin-top: 30px;
+}
+
+.cookie-footer .back-home {
+  color: var(--white-color);
+  font-weight: var(--font-medium);
+  text-decoration: none;
+}
+
+.cookie-footer .back-home:hover {
+  text-decoration: underline;
+}

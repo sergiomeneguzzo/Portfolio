@@ -680,6 +680,12 @@ img {
   gap: var(--mb-2);
   color: var(--white-color);
 
+  a {
+    display: inline-block;
+    color: #9b111e;
+    text-decoration: none;
+  }
+
   @media screen and (max-width: 768px) {
     flex-direction: column;
     text-align: center;
@@ -816,6 +822,13 @@ img {
     padding-bottom: 0.5rem;
     font-size: var(--smaller-font-size);
     color: var(--first-color-light);
+
+    a {
+      display: inline-block;
+      color: inherit;
+      text-decoration: none;
+      width: auto;
+    }
   }
 }
 

@@ -164,20 +164,18 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 });
 
 // COOKIE BANNER
-// COOKIE BANNER
 function checkCookieConsent() {
   const consent = localStorage.getItem('cookieConsent');
   const banner = document.getElementById('cookieBanner');
 
   if (consent === 'accepted') {
     banner.style.display = 'none';
-    loadGoogleAnalytics(); // Carica Google Analytics SOLO se il consenso è "accepted"
+    loadGoogleAnalytics();
   } else if (!consent) {
-    startOverlayAnimation(); // Se l'utente non ha ancora scelto, mostra il banner
+    startOverlayAnimation();
   }
 }
 
-// Funzione per iniziare l'animazione dell'overlay
 function startOverlayAnimation() {
   let overlay = gsap.timeline();
   overlay
@@ -187,25 +185,21 @@ function startOverlayAnimation() {
     .call(showCookieBanner);
 }
 
-// Mostra il banner dei cookie
 function showCookieBanner() {
   document.getElementById('cookieBanner').style.display = 'block';
 }
 
-// Accetta i cookie e attiva Google Analytics
 function acceptCookies() {
   localStorage.setItem('cookieConsent', 'accepted');
   document.getElementById('cookieBanner').style.display = 'none';
   loadGoogleAnalytics();
 }
 
-// Rifiuta i cookie e disattiva il tracciamento
 function declineCookies() {
   localStorage.setItem('cookieConsent', 'declined');
   document.getElementById('cookieBanner').style.display = 'none';
 }
 
-// Carica Google Analytics solo se i cookie sono stati accettati
 function loadGoogleAnalytics() {
   const script = document.createElement('script');
   script.async = true;
@@ -220,16 +214,13 @@ function loadGoogleAnalytics() {
     window.gtag = gtag;
 
     gtag('js', new Date());
-    gtag('config', 'G-EW6439QPSN', { anonymize_ip: true }); // Anonimizza gli IP
+    gtag('config', 'G-EW6439QPSN', { anonymize_ip: true });
     gtag('consent', 'update', { analytics_storage: 'granted' });
   };
 }
 
-// Assegna le funzioni globalmente per essere richiamate nei bottoni
 window.acceptCookies = acceptCookies;
 window.declineCookies = declineCookies;
-
-// Controlla il consenso quando la pagina viene caricata
 window.addEventListener('load', checkCookieConsent);
 
 /*----- ANIMATIONS -----*/
