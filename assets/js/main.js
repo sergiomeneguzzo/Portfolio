@@ -137,7 +137,13 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
           responseMessage.style.display = 'none';
         }, 4000);
       } else {
-        responseMessage.textContent = 'Error sending message. Try again later';
+        if (data.error === 'Too many requests, please try again later') {
+          responseMessage.textContent =
+            'You are sending too many requests. Please try again later.';
+        } else {
+          responseMessage.textContent =
+            'Error sending message. Try again later';
+        }
         responseMessage.className = 'response-message error';
         responseMessage.style.display = 'block';
 
