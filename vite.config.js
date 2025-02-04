@@ -8,7 +8,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        cookiePolicy: resolve(__dirname, 'public/legal/cookie-policy.html'),
+        cookiePolicy: resolve(__dirname, 'legal/cookie-policy.html'),
       },
     },
     cssCodeSplit: true,
