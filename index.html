@@ -237,6 +237,12 @@
           <input type="email" id="email" placeholder="Email" class="contact__input" value="">
         </div>
         <textarea id="message" cols="0" rows="7" placeholder="Message" class="contact__input text-area-input"></textarea>
+        <div class="checkbox-container">
+          <input type="checkbox" id="privacy-checkbox" required>
+          <label for="privacy-checkbox">
+            I accept the <a href="/legal/privacy-policy.html">Privacy Policy</a>
+          </label>
+        </div>      
         <input type="submit" value="Send Message" class="button contact__button">
 
         <div id="responseMessage" class="response-message"></div>
@@ -264,7 +270,8 @@
 
     <p class="footer__copy">&#169; All rights reserved</p>
     <p class="footer__copy">
-      <a href="legal/cookie-policy.html">Cookie Policy</a>
+      <a href="legal/cookie-policy.html">Cookie Policy</a> | 
+      <a href="legal/privacy-policy.html">Privacy Policy</a>
     </p>
   </div>
 </footer>
