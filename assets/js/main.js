@@ -230,6 +230,10 @@ window.addEventListener('load', checkCookieConsent);
 
 gsap.registerPlugin(ScrollTrigger);
 
+document.querySelectorAll('.animated-element').forEach((el) => {
+  el.style.willChange = 'transform, opacity';
+});
+
 // OVERLAY
 let overlay = gsap.timeline();
 overlay
@@ -245,387 +249,225 @@ let homeTl = gsap.timeline({
     ease: 'expo.out',
   },
 });
-//IMG
-// homeTl.from(
-//   '.home__img',
-//   {
-//     opacity: 0,
-//     x: 60,
-//   },
-//   0.9,
-// );
 
-//INFORMATION
 homeTl
-  .from(
-    '.home__information',
-    {
-      opacity: 0,
-      y: 25,
-      duration: 3,
-    },
-    2.3,
-  )
-
-  .from(
-    '.anime-text',
-    {
-      opacity: 0,
-      y: 25,
-      duration: 3,
-      stagger: 0.3,
-    },
-    2.3,
-  );
-
-//NAV ITEM
-homeTl
-  .from(
-    '.nav__logo',
-    {
-      opacity: 0,
-      y: 25,
-      duration: 3,
-    },
-    3.2,
-  )
-
-  .from(
-    '.nav__item',
-    {
-      opacity: 0,
-      y: 25,
-      duration: 3,
-      stagger: 0.2,
-    },
-    2.3,
-  )
-
-  //SOCIAL
+  .from('.home__information', { opacity: 0, y: 25, duration: 3 }, 2.3)
+  .from('.anime-text', { opacity: 0, y: 25, duration: 3, stagger: 0.3 }, 2.3)
+  .from('.nav__logo', { opacity: 0, y: 25, duration: 3 }, 3.2)
+  .from('.nav__item', { opacity: 0, y: 25, duration: 3, stagger: 0.2 }, 2.3)
   .from(
     '.home__social-icon',
-    {
-      opacity: 0,
-      y: 25,
-      duration: 3,
-      stagger: 0.2,
-    },
+    { opacity: 0, y: 25, duration: 3, stagger: 0.2 },
     4,
   );
 
 /*----- ABOUT -----*/
-document.addEventListener('DOMContentLoaded', () => {
-  const aboutTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.about',
-      start: 'top center+=100',
-      end: 'bottom center',
-      toggleActions: 'play reverse play reverse',
-    },
-  });
-
-  //TITLE
-  aboutTl
-    .fromTo(
-      '.about__title',
-      {
-        opacity: 0,
-        y: 30,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: 'power2.out',
-      },
-    )
-
-    //PIC
-    .fromTo(
-      '.about__img',
-      {
-        opacity: 0,
-        x: -100,
-      },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.8,
-        ease: 'power2.out',
-      },
-      '-=0.4',
-    )
-
-    //TEXT
-    .fromTo(
-      '.about__text',
-      {
-        opacity: 0,
-        x: 100,
-      },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.8,
-        ease: 'power2.out',
-      },
-      '-=0.6',
-    );
+const aboutTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.about',
+    start: 'top center+=100',
+    end: 'bottom center',
+    toggleActions: 'play reverse play reverse',
+    scroller: document.body,
+    markers: false,
+  },
 });
 
+aboutTl
+  .fromTo(
+    '.about__title',
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' },
+  )
+  .fromTo(
+    '.about__img',
+    { opacity: 0, x: -100 },
+    { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out' },
+    '-=0.4',
+  )
+  .fromTo(
+    '.about__text',
+    { opacity: 0, x: 100 },
+    { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out' },
+    '-=0.6',
+  );
+
 /*----- SKILLS -----*/
-document.addEventListener('DOMContentLoaded', () => {
-  const skillsTitleTl = gsap.timeline({
+const skillsTitleTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.skills__title',
+    start: 'top center+=200',
+    toggleActions: 'play reverse play reverse',
+    scroller: document.body,
+  },
+});
+
+skillsTitleTl.fromTo(
+  '.skills__title',
+  { opacity: 0, y: 30 },
+  { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' },
+);
+
+document.querySelectorAll('.skills__category').forEach((category) => {
+  const categoryTl = gsap.timeline({
     scrollTrigger: {
-      trigger: '.skills__title',
-      start: 'top center+=200',
+      trigger: category,
+      start: 'top center+=300',
       toggleActions: 'play reverse play reverse',
+      scroller: document.body,
     },
   });
 
-  skillsTitleTl.fromTo(
-    '.skills__title',
-    {
-      opacity: 0,
-      y: 30,
-    },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: 'power2.out',
-    },
+  categoryTl.fromTo(
+    category.querySelector('.skills__category-title'),
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' },
   );
 
-  document.querySelectorAll('.skills__category').forEach((category, index) => {
-    const categoryTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: category,
-        start: 'top center+=300',
-        toggleActions: 'play reverse play reverse',
-      },
-    });
-
+  category.querySelectorAll('.skills__item').forEach((item, itemIndex) => {
     categoryTl.fromTo(
-      category.querySelector('.skills__category-title'),
-      {
-        opacity: 0,
-        y: 20,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        ease: 'power2.out',
-      },
+      item,
+      { opacity: 0, scale: 0.5, rotate: -180 },
+      { opacity: 1, scale: 1, rotate: 0, duration: 0.4, ease: 'back.out(1.7)' },
+      `-=${itemIndex ? 0.3 : 0}`,
     );
-
-    const items = category.querySelectorAll('.skills__item');
-    items.forEach((item, itemIndex) => {
-      categoryTl.fromTo(
-        item,
-        {
-          opacity: 0,
-          scale: 0.5,
-          rotate: -180,
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          rotate: 0,
-          duration: 0.4,
-          ease: 'back.out(1.7)',
-        },
-        `-=${itemIndex ? 0.3 : 0}`,
-      );
-    });
   });
 });
 
 /*----- CAREER -----*/
-document.addEventListener('DOMContentLoaded', () => {
-  gsap.to('.career__line', {
-    scrollTrigger: {
-      trigger: '.career__timeline',
-      start: 'top center',
-      end: 'bottom center',
-      scrub: 1,
-    },
-    scaleY: 1,
-    ease: 'none',
-  });
+const timeline = document.querySelector('.career__timeline');
+const timelineHeight = timeline.offsetHeight - 20;
 
-  const timeline = document.querySelector('.career__timeline');
-  const timelineHeight = timeline.offsetHeight - 20;
+gsap.to('.career__line', {
+  scrollTrigger: {
+    trigger: '.career__timeline',
+    start: 'top center',
+    end: 'bottom center',
+    scrub: 1,
+    scroller: document.body,
+  },
+  scaleY: 1,
+  ease: 'none',
+});
 
-  gsap.to('.career__ball', {
-    scrollTrigger: {
-      trigger: '.career__timeline',
-      start: 'top center',
-      end: 'bottom center',
-      scrub: 1,
-    },
-    y: timelineHeight,
-    ease: 'none',
-  });
+gsap.to('.career__ball', {
+  scrollTrigger: {
+    trigger: '.career__timeline',
+    start: 'top center',
+    end: 'bottom center',
+    scrub: 1,
+    scroller: document.body,
+  },
+  y: timelineHeight,
+  ease: 'none',
+});
 
-  const items = document.querySelectorAll('.career__item');
-
-  items.forEach((item, index) => {
-    gsap.fromTo(
-      item,
-      {
-        opacity: 0,
-        x: -30,
+document.querySelectorAll('.career__item').forEach((item) => {
+  gsap.fromTo(
+    item,
+    { opacity: 0, x: -30 },
+    {
+      opacity: 1,
+      x: 0,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: item,
+        start: 'top center+=100',
+        toggleActions: 'play none none reverse',
+        scroller: document.body,
       },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: item,
-          start: 'top center+=100',
-          toggleActions: 'play none none reverse',
-        },
-      },
-    );
-  });
+    },
+  );
 });
 
 /*----- CONTACT ME -----*/
-document.addEventListener('DOMContentLoaded', () => {
-  //TITLE
-  const contactTitleTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.contact__title',
-      start: 'top center+=200',
-      end: 'bottom center-=680',
-      toggleActions: 'play reverse play reverse',
-    },
-  });
+const contactTitleTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.contact__title',
+    start: 'top center+=200',
+    end: 'bottom center-=680',
+    toggleActions: 'play reverse play reverse',
+    scroller: document.body,
+  },
+});
 
-  contactTitleTl.fromTo(
-    '.contact__title',
-    {
-      opacity: 0,
-      y: 30,
-    },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: 'power2.out',
-    },
+contactTitleTl.fromTo(
+  '.contact__title',
+  { opacity: 0, y: 30 },
+  { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' },
+);
+
+const contactBoxesTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.contact__content',
+    start: 'top center+=200',
+    toggleActions: 'play reverse play reverse',
+    scroller: document.body,
+  },
+});
+
+document.querySelectorAll('.contact__box').forEach((box, index) => {
+  contactBoxesTl.fromTo(
+    box,
+    { opacity: 0, y: 50, scale: 0.8 },
+    { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: 'back.out(1.7)' },
+    index * 0.2,
+  );
+});
+
+const formTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.contact__form',
+    start: 'top center+=200',
+    toggleActions: 'play reverse play reverse',
+    scroller: document.body,
+  },
+});
+
+formTl
+  .fromTo(
+    '.contact__inputs',
+    { opacity: 0, x: -50 },
+    { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out' },
+  )
+  .fromTo(
+    '.text-area-input',
+    { opacity: 0, x: 50 },
+    { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out' },
+    '-=0.6',
+  )
+  .fromTo(
+    '.contact__button',
+    { opacity: 0, y: 30, scale: 0.8 },
+    { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: 'back.out(1.7)' },
+    '-=0.4',
   );
 
-  //BOXES
-  const contactBoxesTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.contact__content',
-      start: 'top center+=200',
-      toggleActions: 'play reverse play reverse',
-    },
-  });
+document.querySelectorAll('.contact__box').forEach((box) => {
+  const icon = box.querySelector('.contact__icon');
+  const hoverTl = gsap.timeline({ paused: true });
 
-  document.querySelectorAll('.contact__box').forEach((box, index) => {
-    contactBoxesTl.fromTo(
-      box,
-      {
-        opacity: 0,
-        y: 50,
-        scale: 0.8,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.6,
-        ease: 'back.out(1.7)',
-      },
-      index * 0.2,
-    );
-  });
+  hoverTl
+    .to(box, {
+      y: -5,
+      duration: 0.3,
+      ease: 'power2.out',
+      boxShadow: '0 6px 8px rgba(174, 190, 205, 0.4)',
+    })
+    .to(icon, { scale: 1.2, duration: 0.3, ease: 'power2.out' }, '-=0.3');
 
-  //FORM
-  const formTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.contact__form',
-      start: 'top center+=200',
-      toggleActions: 'play reverse play reverse',
-    },
-  });
+  box.addEventListener('mouseenter', () => hoverTl.play());
+  box.addEventListener('mouseleave', () => hoverTl.reverse());
+});
 
-  //INPUTS
-  formTl
-    .fromTo(
-      '.contact__inputs',
-      {
-        opacity: 0,
-        x: -50,
-      },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.8,
-        ease: 'power2.out',
-      },
-    )
-    .fromTo(
-      '.text-area-input',
-      {
-        opacity: 0,
-        x: 50,
-      },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.8,
-        ease: 'power2.out',
-      },
-      '-=0.6',
-    )
-    .fromTo(
-      '.contact__button',
-      {
-        opacity: 0,
-        y: 30,
-        scale: 0.8,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.6,
-        ease: 'back.out(1.7)',
-      },
-      '-=0.4',
-    );
+let timeout;
+window.addEventListener('resize', () => {
+  clearTimeout(timeout);
+  timeout = setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 200);
+});
 
-  //HOVER EFFECT
-  const contactBoxes = document.querySelectorAll('.contact__box');
-  contactBoxes.forEach((box) => {
-    const icon = box.querySelector('.contact__icon');
-
-    const hoverTl = gsap.timeline({ paused: true });
-
-    hoverTl
-      .to(box, {
-        y: -5,
-        duration: 0.3,
-        ease: 'power2.out',
-        boxShadow: '0 6px 8px rgba(174, 190, 205, 0.4)',
-      })
-      .to(
-        icon,
-        {
-          scale: 1.2,
-          duration: 0.3,
-          ease: 'power2.out',
-        },
-        '-=0.3',
-      );
-
-    box.addEventListener('mouseenter', () => hoverTl.play());
-    box.addEventListener('mouseleave', () => hoverTl.reverse());
-  });
+window.addEventListener('load', () => {
+  ScrollTrigger.refresh();
 });
