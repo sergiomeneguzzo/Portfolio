@@ -9,6 +9,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         cookiePolicy: resolve(__dirname, 'legal/cookie-policy.html'),
+        privacyPolicy: resolve(__dirname, 'legal/privacy-policy.html'),
       },
     },
     cssCodeSplit: true,
