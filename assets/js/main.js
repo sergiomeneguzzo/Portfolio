@@ -460,14 +460,16 @@ document.querySelectorAll('.contact__box').forEach((box) => {
   box.addEventListener('mouseleave', () => hoverTl.reverse());
 });
 
-let timeout;
+let resizeTimeout;
 window.addEventListener('resize', () => {
-  clearTimeout(timeout);
-  timeout = setTimeout(() => {
-    ScrollTrigger.refresh();
-  }, 200);
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    ScrollTrigger.refresh(true);
+  }, 500);
 });
 
 window.addEventListener('load', () => {
-  ScrollTrigger.refresh();
+  setTimeout(() => {
+    ScrollTrigger.refresh(true);
+  }, 100);
 });
