@@ -174,7 +174,7 @@ function checkCookieConsent() {
   if (consent === 'accepted') {
     banner.style.display = 'none';
     loadGoogleAnalytics();
-  } else if (!consent) {
+  } else if (consent === null) {
     startOverlayAnimation();
   }
 }
@@ -391,11 +391,11 @@ const contactTitleTl = gsap.timeline({
   },
 });
 
-contactTitleTl.fromTo(
-  '.contact__title',
-  { opacity: 0, y: 30 },
-  { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' },
-);
+// contactTitleTl.fromTo(
+//   '.contact__title',
+//   { opacity: 0, y: 30 },
+//   { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' },
+// );
 
 const contactBoxesTl = gsap.timeline({
   scrollTrigger: {
