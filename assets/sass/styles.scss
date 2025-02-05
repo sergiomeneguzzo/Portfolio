@@ -576,6 +576,10 @@ img {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    resize: vertical;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: auto;
   }
 
   .checkbox-container {
