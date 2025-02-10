@@ -401,6 +401,7 @@ const contactBoxesTl = gsap.timeline({
   scrollTrigger: {
     trigger: '.contact__content',
     start: 'top center+=200',
+    end: 'bottom center-=600',
     toggleActions: 'play reverse play reverse',
     scroller: document.body,
   },
