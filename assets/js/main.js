@@ -226,6 +226,13 @@ window.acceptCookies = acceptCookies;
 window.declineCookies = declineCookies;
 window.addEventListener('load', checkCookieConsent);
 
+function modifyCookieConsent() {
+  localStorage.removeItem('cookieConsent');
+  showCookieBanner();
+}
+
+window.modifyCookieConsent = modifyCookieConsent;
+
 /*----- ANIMATIONS -----*/
 
 gsap.registerPlugin(ScrollTrigger);
@@ -448,14 +455,14 @@ document.querySelectorAll('.contact__box').forEach((box) => {
   const icon = box.querySelector('.contact__icon');
   const hoverTl = gsap.timeline({ paused: true });
 
-  hoverTl
-    .to(box, {
-      y: -5,
-      duration: 0.3,
-      ease: 'power2.out',
-      boxShadow: '0 6px 8px rgba(174, 190, 205, 0.4)',
-    })
-    .to(icon, { scale: 1.2, duration: 0.3, ease: 'power2.out' }, '-=0.3');
+  // hoverTl
+  //   .to(box, {
+  //     y: -5,
+  //     duration: 0.3,
+  //     ease: 'power2.out',
+  //     boxShadow: '0 6px 8px rgba(174, 190, 205, 0.4)',
+  //   })
+  //   .to(icon, { scale: 1.2, duration: 0.3, ease: 'power2.out' }, '-=0.3');
 
   box.addEventListener('mouseenter', () => hoverTl.play());
   box.addEventListener('mouseleave', () => hoverTl.reverse());
