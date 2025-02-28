@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import autoprefixer from 'autoprefixer';
 
 export default defineConfig({
   base: './',
@@ -15,6 +16,9 @@ export default defineConfig({
     cssCodeSplit: true,
   },
   css: {
+    postcss: {
+      plugins: [autoprefixer()],
+    },
     preprocessorOptions: {
       scss: {
         charset: false,

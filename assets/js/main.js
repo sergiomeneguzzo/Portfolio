@@ -1,6 +1,15 @@
 import '../sass/styles.scss';
 import '../sass/cookie-policy.scss';
 
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+  dataLayer.push(arguments);
+}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  analytics_storage: 'denied',
+});
+
 /* MENU SHOW */
 const showMenu = (toggleId, navId) => {
   const toggle = document.getElementById(toggleId),
@@ -94,6 +103,10 @@ window.addEventListener('scroll', () => {
   });
 });
 
+/*----- COPYRIGHT YEAR -----*/
+
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+
 /*----- EMAIL-----*/
 
 const apiUrl = import.meta.env.VITE_API_URL;
@@ -166,7 +179,6 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     });
 });
 
-// COOKIE BANNER
 function checkCookieConsent() {
   const consent = localStorage.getItem('cookieConsent');
   const banner = document.getElementById('cookieBanner');
@@ -195,12 +207,26 @@ function showCookieBanner() {
 function acceptCookies() {
   localStorage.setItem('cookieConsent', 'accepted');
   document.getElementById('cookieBanner').style.display = 'none';
+
+  if (typeof gtag === 'function') {
+    gtag('consent', 'update', {
+      ad_storage: 'granted',
+      analytics_storage: 'granted',
+    });
+  }
   loadGoogleAnalytics();
 }
 
 function declineCookies() {
   localStorage.setItem('cookieConsent', 'declined');
   document.getElementById('cookieBanner').style.display = 'none';
+
+  if (typeof gtag === 'function') {
+    gtag('consent', 'update', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+    });
+  }
 }
 
 function loadGoogleAnalytics() {
@@ -218,20 +244,18 @@ function loadGoogleAnalytics() {
 
     gtag('js', new Date());
     gtag('config', 'G-EW6439QPSN', { anonymize_ip: true });
-    gtag('consent', 'update', { analytics_storage: 'granted' });
   };
 }
-
-window.acceptCookies = acceptCookies;
-window.declineCookies = declineCookies;
-window.addEventListener('load', checkCookieConsent);
 
 function modifyCookieConsent() {
   localStorage.removeItem('cookieConsent');
   showCookieBanner();
 }
 
+window.acceptCookies = acceptCookies;
+window.declineCookies = declineCookies;
 window.modifyCookieConsent = modifyCookieConsent;
+window.addEventListener('load', checkCookieConsent);
 
 /*----- ANIMATIONS -----*/
 
