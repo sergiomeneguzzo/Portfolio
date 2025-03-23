@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/sass/styles.scss" />
     <title>Sergio Meneguzzo</title>
   </head>
@@ -14,290 +17,413 @@
     <div class="overlay third"></div>
 
     <section id="home">
-     <a href="#" class="scrolltop" id="scroll-top">
+      <a href="#" class="scrolltop" id="scroll-top">
         <ion-icon name="chevron-up-outline" class="scrolltop__icon"></ion-icon>
-     </a>
+      </a>
 
-    <header class="l-header">
-      <nav class="nav bd-grid">
-        <div>
-          <a class="nav__logo">PORTFOLIO</a>
-        </div>
-
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#home" class="nav__link">Home</a>
-            </li>
-            <li class="nav__item">
-              <a href="#about" class="nav__link">About</a>
-            </li>
-            <li class="nav__item">
-              <a href="#skills" class="nav__link">Skills</a>
-            </li>
-            <li class="nav__item">
-              <a href="#career" class="nav__link">Experience</a>
-            </li>
-            <li class="nav__item">
-              <a href="#contact" class="nav__link">Contact</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="nav__toggle" id="nav-toggle">
-          <ion-icon name="menu"></ion-icon>
-        </div>
-      </nav>
-    </header>
-
-    <main class="l-main bd-grid">
-      <div class="home">
-        <div class="home__information">
-          <span class="home__present anime-text">Hello, I'm </span>
-          <h1 class="home__title anime-text">Sergio Meneguzzo</h1>
-          <span class="home__skill anime-text">Fullstack Developer</span>
-
+      <header class="l-header">
+        <nav class="nav bd-grid">
           <div>
-            <a href="curriculum.pdf" download="sergio_meneguzzo.pdf" class="home__button anime-text">DOWNLOAD CV</a>
+            <a class="nav__logo">PORTFOLIO</a>
           </div>
-        </div>
 
-        <!-- <div class="home__img">
+          <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#home" class="nav__link" data-i18n="navHome">Home</a>
+              </li>
+              <li class="nav__item">
+                <a href="#about" class="nav__link" data-i18n="navAbout"
+                  >About</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="#skills" class="nav__link" data-i18n="navSkills"
+                  >Skills</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="#career" class="nav__link" data-i18n="navExperience"
+                  >Experience</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="#contact" class="nav__link" data-i18n="navContact"
+                  >Contact</a
+                >
+              </li>
+              <li class="nav__item language-switcher">
+                <button onclick="setLanguage('en')" class="lang-btn">
+                  <img
+                    src="assets/img/eng.png"
+                    alt="English Flag"
+                    style="width: 20px; height: 20px"
+                  />
+                </button>
+                <button onclick="setLanguage('it')" class="lang-btn">
+                  <img
+                    src="assets/img/ita.jpg"
+                    alt="Italian Flag"
+                    style="width: 20px; height: 20px"
+                  />
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="nav__toggle" id="nav-toggle">
+            <ion-icon name="menu"></ion-icon>
+          </div>
+        </nav>
+      </header>
+
+      <main class="l-main bd-grid">
+        <div class="home">
+          <div class="home__information">
+            <span class="home__present anime-text" data-i18n="homeGreeting"
+              >Hello, I'm</span
+            >
+            <h1 class="home__title anime-text" data-i18n="homeTitle">
+              Sergio Meneguzzo
+            </h1>
+            <span class="home__skill anime-text" data-i18n="homeSkill"
+              >Fullstack Developer</span
+            >
+
+            <div>
+              <a
+                href="curriculum.pdf"
+                download="sergio_meneguzzo.pdf"
+                class="home__button anime-text"
+                data-i18n="downloadCV"
+                >DOWNLOAD CV</a
+              >
+            </div>
+          </div>
+
+          <!-- <div class="home__img">
           <img src="assets/img/me.png" draggable="false" />
         </div> -->
 
-        <div class="home__social">
-          <a href="https://github.com/sergiomeneguzzo" target="_blank">
-          <ion-icon name="logo-github" class="home__social-icon"></ion-icon>
-          </a>
-          <a href="https://www.linkedin.com/in/sergio-meneguzzo" target="_blank">
-          <ion-icon name="logo-linkedin" class="home__social-icon"></ion-icon>
-          </a>
-          <a href="https://www.instagram.com/sergio_meneguzzo"  target="_blank">
-            <ion-icon name="logo-instagram" class="home__social-icon"></ion-icon>
-          </a>
+          <div class="home__social">
+            <a href="https://github.com/sergiomeneguzzo" target="_blank">
+              <ion-icon name="logo-github" class="home__social-icon"></ion-icon>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/sergio-meneguzzo"
+              target="_blank"
+            >
+              <ion-icon
+                name="logo-linkedin"
+                class="home__social-icon"
+              ></ion-icon>
+            </a>
+            <a
+              href="https://www.instagram.com/sergio_meneguzzo"
+              target="_blank"
+            >
+              <ion-icon
+                name="logo-instagram"
+                class="home__social-icon"
+              ></ion-icon>
+            </a>
+          </div>
         </div>
-      </div>
-    </main>
-  </section>
-    
-<section class="about" id="about">
-    <h2 class="about__title">About</h2>
-    
-    <div class="about__container bd-grid">
-      <div class="about__img">
-        <img src="assets/img/me.jpg" alt="About Image" draggable="false">
-      </div>
-      <div class="about__text">
-        <p>
-          I am a Junior Full Stack Developer with a strong passion for web development and a solid understanding of both front-end and back-end technologies. <br>
-          After completing a scientific high school diploma, I pursued a post-diploma specialization in Full Stack Web Development at ITS, where I gained in-depth knowledge of the MEAN stack (MongoDB, Express, Angular, Node.js). <br>
-          I'm driven by a desire to create innovative and efficient web applications, and I'm constantly looking for opportunities to expand my skillset. <br>
-          With a focus on hands-on learning and continuous improvement, I am excited to contribute to real-world projects and grow professionally in the field of software development.        </p>
-      </div>
-    </div>
-  </section>
+      </main>
+    </section>
 
-<section class="skills" id="skills">
-  <h2 class="skills__title">Skills</h2>
-  
-  <div class="skills__container bd-grid">
-      <div class="skills__content">
-          <div class="skills__category">
-              <h3 class="skills__category-title">Frontend</h3>
-              <div class="skills__list">
-                  <div class="skills__item">
-                      <i class="fa-brands fa-html5 skills__icon"></i>
-                      <span class="skills__name">HTML</span>
-                  </div>
-                  <div class="skills__item">
-                      <i class="fa-brands fa-css3-alt skills__icon"></i>
-                      <span class="skills__name">CSS</span>
-                  </div>
-                  <div class="skills__item">
-                      <i class="fa-brands fa-angular skills__icon"></i>
-                      <span class="skills__name">Angular</span>
-                  </div>
-                  <div class="skills__item">
-                      <i class="fa-brands fa-react skills__icon"></i>
-                      <span class="skills__name">React</span>
-                  </div>
-              </div>
-          </div>
+    <section class="about" id="about">
+      <h2 class="about__title" data-i18n="aboutTitle">About</h2>
 
-          <div class="skills__category">
-              <h3 class="skills__category-title">Backend</h3>
-              <div class="skills__list">
-                  <div class="skills__item">
-                      <i class="fa-brands fa-node-js skills__icon"></i>
-                      <span class="skills__name">Node.js</span>
-                  </div>
-                  <div class="skills__item">
-                      <i class="fa-solid fa-server skills__icon"></i>
-                      <span class="skills__name">Express</span>
-                  </div>
-                  <div class="skills__item">
-                      <i class="fa-brands fa-npm skills__icon"></i>
-                      <span class="skills__name">NestJS</span>
-                  </div>
-                  <div class="skills__item">
-                      <i class="fa-solid fa-code skills__icon"></i>
-                      <span class="skills__name">.NET</span>
-                  </div>
-              </div>
-          </div>
-
-          <div class="skills__category">
-              <h3 class="skills__category-title">Tools & Database</h3>
-              <div class="skills__list">
-                  <div class="skills__item">
-                      <i class="fa-brands fa-git-alt skills__icon"></i>
-                      <span class="skills__name">Git</span>
-                  </div>
-                  <div class="skills__item">
-                      <i class="fa-solid fa-database skills__icon"></i>
-                      <span class="skills__name">SQL</span>
-                  </div>
-                  <div class="skills__item">
-                      <i class="fa-brands fa-envira skills__icon"></i>
-                      <span class="skills__name">MongoDB</span>
-                  </div>
-                  <div class="skills__item">
-                    <i class="fa-solid fa-cloud skills__icon"></i>
-                    <span class="skills__name">Cloud</span>
-                </div>                
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
-
-   <section class="career" id="career">
-    <div class="career__container">
-      <h2 class="career__title">My career & experience</h2>
-      
-      <div class="career__timeline">
-        <div class="career__line"></div>
-        
-        <div class="career__ball"></div>
-        
-        <div class="career__item">
-          <h3 class="career__role">Intern</h3>
-          <span class="career__company">Venicecom</span>
-          <span class="career__year">2024</span>
-          <p class="career__description">
-            During my 2-month internship as a Junior Developer, I worked on updating 
-            and developing new features for a project with an Angular frontend, 
-            a .NET backend, and a SQL Server database. <br>
-            I also contributed to implementing and optimizing stored procedures.
-          </p>
+      <div class="about__container bd-grid">
+        <div class="about__img">
+          <img src="assets/img/me.jpg" alt="About Image" draggable="false" />
         </div>
-        
-        <div class="career__item">
-          <h3 class="career__role">Junior Developer</h3>
-          <span class="career__company">Venicecom</span>
-          <span class="career__year">NOW</span>
-          <p class="career__description">
-            During my 1-year apprenticeship, I worked on various management software 
-            solutions and contributed to building an internal company web application 
-            from scratch using the MEAN stack.
+        <div class="about__text">
+          <p data-i18n="aboutText">
+            I am a Junior Full Stack Developer with a strong passion for web
+            development and a solid understanding of both front-end and back-end
+            technologies. <br />
+            After completing a scientific high school diploma, I pursued a
+            post-diploma specialization in Full Stack Web Development at ITS,
+            where I gained in-depth knowledge of the MEAN stack (MongoDB,
+            Express, Angular, Node.js). <br />
+            I'm driven by a desire to create innovative and efficient web
+            applications, and I'm constantly looking for opportunities to expand
+            my skillset. <br />
+            With a focus on hands-on learning and continuous improvement, I am
+            excited to contribute to real-world projects and grow professionally
+            in the field of software development.
           </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="contact" id="contact">
-   <h2 class="contact__title">Contact me</h2>
+    <section class="skills" id="skills">
+      <h2 class="skills__title" data-i18n="skillsTitle">Skills</h2>
 
-   <div class="contact__container bd-grid">
-    <div class="contact__content bd-grid">
-        <div class="contact__box">
+      <div class="skills__container bd-grid">
+        <div class="skills__content">
+          <div class="skills__category">
+            <h3 class="skills__category-title" data-i18n="frontendTitle">
+              Frontend
+            </h3>
+            <div class="skills__list">
+              <div class="skills__item">
+                <i class="fa-brands fa-html5 skills__icon"></i>
+                <span class="skills__name">HTML</span>
+              </div>
+              <div class="skills__item">
+                <i class="fa-brands fa-css3-alt skills__icon"></i>
+                <span class="skills__name">CSS</span>
+              </div>
+              <div class="skills__item">
+                <i class="fa-brands fa-angular skills__icon"></i>
+                <span class="skills__name">Angular</span>
+              </div>
+              <div class="skills__item">
+                <i class="fa-brands fa-react skills__icon"></i>
+                <span class="skills__name">React</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills__category">
+            <h3 class="skills__category-title" data-i18n="backendTitle">
+              Backend
+            </h3>
+            <div class="skills__list">
+              <div class="skills__item">
+                <i class="fa-brands fa-node-js skills__icon"></i>
+                <span class="skills__name">Node.js</span>
+              </div>
+              <div class="skills__item">
+                <i class="fa-solid fa-server skills__icon"></i>
+                <span class="skills__name">Express</span>
+              </div>
+              <div class="skills__item">
+                <i class="fa-brands fa-npm skills__icon"></i>
+                <span class="skills__name">NestJS</span>
+              </div>
+              <div class="skills__item">
+                <i class="fa-solid fa-code skills__icon"></i>
+                <span class="skills__name">.NET</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills__category">
+            <h3 class="skills__category-title" data-i18n="toolsTitle">
+              Tools & Database
+            </h3>
+            <div class="skills__list">
+              <div class="skills__item">
+                <i class="fa-brands fa-git-alt skills__icon"></i>
+                <span class="skills__name">Git</span>
+              </div>
+              <div class="skills__item">
+                <i class="fa-solid fa-database skills__icon"></i>
+                <span class="skills__name">SQL</span>
+              </div>
+              <div class="skills__item">
+                <i class="fa-brands fa-envira skills__icon"></i>
+                <span class="skills__name">MongoDB</span>
+              </div>
+              <div class="skills__item">
+                <i class="fa-solid fa-cloud skills__icon"></i>
+                <span class="skills__name">Cloud</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="career" id="career">
+      <div class="career__container">
+        <h2 class="career__title" data-i18n="careerTitle">
+          My career & experience
+        </h2>
+
+        <div class="career__timeline">
+          <div class="career__line"></div>
+          <div class="career__ball"></div>
+
+          <div class="career__item">
+            <h3 class="career__role" data-i18n="internRole">Intern</h3>
+            <span class="career__company">Venicecom</span>
+            <span class="career__year">2024</span>
+            <p class="career__description" data-i18n="internDesc">
+              During my 2-month internship as a Junior Developer, I worked on
+              updating and developing new features for a project with an Angular
+              frontend, a .NET backend, and a SQL Server database. <br />
+              I also contributed to implementing and optimizing stored
+              procedures.
+            </p>
+          </div>
+
+          <div class="career__item">
+            <h3 class="career__role" data-i18n="juniorRole">
+              Junior Developer
+            </h3>
+            <span class="career__company">Venicecom</span>
+            <span class="career__year">NOW</span>
+            <p class="career__description" data-i18n="juniorDesc">
+              During my 1-year apprenticeship, I worked on various management
+              software solutions and contributed to building an internal company
+              web application from scratch using the MEAN stack.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="contact__title" data-i18n="contactTitle">Contact me</h2>
+      <div class="contact__container bd-grid">
+        <div class="contact__content bd-grid">
+          <div class="contact__box">
             <ion-icon name="home-outline" class="contact__icon"></ion-icon>
-            <h3 class="contact__title">Location</h3>
-            <span class="contact__description">Vicenza-Italy</span>
-        </div>
-
-        <div class="contact__box">
+            <h3 class="contact__title" data-i18n="locationTitle">Location</h3>
+            <span class="contact__description" data-i18n="locationDesc"
+              >Vicenza-Italy</span
+            >
+          </div>
+          <div class="contact__box">
             <ion-icon name="mail-outline" class="contact__icon"></ion-icon>
-            <h3 class="contact__title">Gmail</h3>
-            <span class="contact__description">sergiomeneguzzo.dev@gmail.com</span>
-        </div>  
-        
-        <div class="contact__box">
-            <ion-icon name="paper-plane-outline" class="contact__icon"></ion-icon>
-          <h3 class="contact__title">Telegram</h3>
-          <a><span class="contact__description">@sergio_meneguzzo</span></a>
-      </div>
-      </div>
-
-      <form id="contactForm" class="contact__form">
-        <div class="contact__inputs">
-          <input type="text" id="name" placeholder="Name" class="contact__input">
-          <input type="email" id="email" placeholder="Email" class="contact__input" value="">
+            <h3 class="contact__title" data-i18n="emailTitle">Gmail</h3>
+            <span class="contact__description"
+              >sergiomeneguzzo.dev@gmail.com</span
+            >
+          </div>
+          <div class="contact__box">
+            <ion-icon
+              name="paper-plane-outline"
+              class="contact__icon"
+            ></ion-icon>
+            <h3 class="contact__title" data-i18n="telegramTitle">Telegram</h3>
+            <a><span class="contact__description">@sergio_meneguzzo</span></a>
+          </div>
         </div>
-        <textarea id="message" cols="0" rows="7" placeholder="Message" class="contact__input text-area-input"></textarea>
-        <div class="checkbox-container">
-          <input type="checkbox" id="privacy-checkbox" required>
-          <label for="privacy-checkbox">
-            I accept the <a href="/legal/privacy-policy.html">Privacy Policy</a>
-          </label>
-        </div>      
-        <input type="submit" value="Send Message" class="button contact__button">
 
-        <div id="responseMessage" class="response-message"></div>
-      </form>
-  </div>
- </section>  
-</main>
+        <form id="contactForm" class="contact__form">
+          <div class="contact__inputs">
+            <input
+              type="text"
+              id="name"
+              placeholder="Name"
+              class="contact__input"
+            />
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              class="contact__input"
+              value=""
+            />
+          </div>
+          <textarea
+            id="message"
+            cols="0"
+            rows="7"
+            placeholder="Message"
+            class="contact__input text-area-input"
+          ></textarea>
+          <div class="checkbox-container">
+            <input type="checkbox" id="privacy-checkbox" required />
+            <label for="privacy-checkbox">
+              I accept the
+              <a href="/legal/privacy-policy.html">Privacy Policy</a>
+            </label>
+          </div>
+          <input
+            type="submit"
+            value="Send Message"
+            class="button contact__button"
+          />
+          <div id="responseMessage" class="response-message"></div>
+        </form>
+      </div>
+    </section>
 
-<footer class="footer">
-  <div class="footer__description bd-container">
-    <h1 class="footer__title">Sergio Meneguzzo</h1>
-    <p class="footer__description">Hi I'm Sergio and this is my personal website, consult me here.</p>
-
-    <div class="footer__social">
-      <a href="https://github.com/sergiomeneguzzo" target="_blank">
-        <ion-icon name="logo-github" class="footer__social-icon"></ion-icon>
-      </a>
-      <a href="https://www.linkedin.com/in/sergio-meneguzzo" target="_blank">
-        <ion-icon name="logo-linkedin" class="footer__social-icon"></ion-icon>
-      </a>
-      <a href="https://www.instagram.com/sergio_meneguzzo" target="_blank">
-        <ion-icon name="logo-instagram" class="footer__social-icon"></ion-icon>
-      </a>
+    <div class="spinner-container" style="display: none">
+      <div class="spinner"></div>
     </div>
 
-    <p class="footer__copy">&#169; <span id="currentYear"></span> All rights reserved</p>
-    <p class="footer__copy">
-      <a href="legal/cookie-policy.html">Cookie Policy</a> | 
-      <a href="legal/privacy-policy.html">Privacy Policy</a> |
-      <a href="#" onclick="modifyCookieConsent()">Cookie Preferences</a>
-    </p>
-  </div>
-</footer>
+    <footer class="footer">
+      <div class="footer__description bd-container">
+        <h1 class="footer__title">Sergio Meneguzzo</h1>
+        <p class="footer__description" data-i18n="footerDesc">
+          Hi I'm Sergio and this is my personal website, consult me here.
+        </p>
+        <div class="footer__social">
+          <a href="https://github.com/sergiomeneguzzo" target="_blank">
+            <ion-icon name="logo-github" class="footer__social-icon"></ion-icon>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/sergio-meneguzzo"
+            target="_blank"
+          >
+            <ion-icon
+              name="logo-linkedin"
+              class="footer__social-icon"
+            ></ion-icon>
+          </a>
+          <a href="https://www.instagram.com/sergio_meneguzzo" target="_blank">
+            <ion-icon
+              name="logo-instagram"
+              class="footer__social-icon"
+            ></ion-icon>
+          </a>
+        </div>
+        <p class="footer__copy">
+          &#169; <span id="currentYear"></span> All rights reserved
+        </p>
+        <p class="footer__copy">
+          <a href="legal/cookie-policy.html">Cookie Policy</a> |
+          <a href="legal/privacy-policy.html">Privacy Policy</a> |
+          <a href="#" onclick="modifyCookieConsent()">Cookie Preferences</a>
+        </p>
+      </div>
+    </footer>
 
-<div class="cookie-banner" id="cookieBanner">
-  <div class="cookie-content">
-    <p>
-      This website uses cookies to enhance your user experience.
-      You can accept or reject non-essential cookies.<br>
-      For more details, please review our 
-      <a href="legal/cookie-policy.html">Cookie Policy</a>
-    </p>
-    <div class="cookie-buttons">
-      <button class="cookie-decline" onclick="acceptCookies()">Accept</button>
-      <button class="cookie-decline" onclick="declineCookies()">Reject</button>
+    <div class="cookie-banner" id="cookieBanner">
+      <div class="cookie-content">
+        <p>
+          This website uses cookies to enhance your user experience. You can
+          accept or reject non-essential cookies.<br />
+          For more details, please review our
+          <a href="legal/cookie-policy.html" data-i18n="cookiePolicyLink"
+            >Cookie Policy</a
+          >
+        </p>
+        <div class="cookie-buttons">
+          <button
+            class="cookie-decline"
+            onclick="acceptCookies()"
+            data-i18n="cookieAccept"
+          >
+            Accept
+          </button>
+          <button
+            class="cookie-decline"
+            onclick="declineCookies()"
+            data-i18n="cookieReject"
+          >
+            Reject
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
   </body>
-<!-- GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<!-- ICONS -->
-<script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@6.0.0/dist/ionicons/ionicons.esm.js"></script>
-<!-- MAIN -->
-<script type="module" src="assets/js/main.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- ICONS -->
+  <script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/ionicons@6.0.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <!-- MAIN -->
+  <script type="module" src="assets/js/main.js"></script>
 </html>
