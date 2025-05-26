@@ -31,7 +31,7 @@ export const translations = {
     footerDesc:
       "Hi I'm Sergio and this is my personal website, consult me here.",
     cookieBannerText:
-      'This website uses cookies to enhance your user experience. You can accept or reject non-essential cookies.',
+      'This website uses cookies to enhance your user experience. You can accept or reject non-essential cookies. For more details, please review our',
     cookiePolicyLink: 'Cookie Policy',
     cookieAccept: 'Accept',
     cookieReject: 'Reject',
@@ -123,7 +123,7 @@ export const translations = {
     footerDesc:
       'Ciao, sono Sergio e questo è il mio sito personale, consultami qui.',
     cookieBannerText:
-      'Questo sito utilizza i cookie per migliorare la tua esperienza. Puoi accettare o rifiutare i cookie non essenziali.',
+      'Questo sito utilizza i cookie per migliorare la tua esperienza. Puoi accettare o rifiutare i cookie non essenziali. Per maggiori informazioni, consulta la nostra',
     cookiePolicyLink: 'Cookie Policy',
     cookieAccept: 'Accetta',
     cookieReject: 'Rifiuta',
